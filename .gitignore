@@ -1,0 +1,6 @@
+.DS_Store
+work/
+site/
+outputs/*
+!outputs/Airbnb-Senior-Staff-ML-Study-Guide.html
+__pycache__/

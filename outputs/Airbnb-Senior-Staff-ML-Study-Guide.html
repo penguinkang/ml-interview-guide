@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Airbnb · Senior Staff ML — Jay’s Interview Field Guide</title><meta name="description" content="50-question bilingual interview study guide: coding, LLM/ML, system design, leadership and culture."><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23d93450'/%3E%3Cpath d='M8 8h7v17H8zm10 0h6v17h-6z' fill='white'/%3E%3C/svg%3E"><style>
+:root{--ink:#17232d;--muted:#596775;--accent:#cf2846;--line:#dce2e7;--paper:#fff;--nav:#142934;--tint:#f5f7f9;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Apple SD Gothic Neo","Malgun Gothic",sans-serif;color:var(--ink);background:var(--tint);font-size:16px;line-height:1.7}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:24px}body{margin:0}a{color:var(--accent)}button,input,select{font:inherit}button,select{cursor:pointer}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid #1686a7;outline-offset:4px}.skip{position:fixed;top:-80px;left:20px;z-index:20;background:white;padding:12px}.skip:focus{top:12px}.sidebar{position:fixed;inset:0 auto 0 0;width:292px;background:var(--nav);color:#fff;padding:34px 24px;overflow:auto}.brand{font-weight:800;font-size:23px;letter-spacing:-.5px}.brand span{color:#ff7288}.edition{color:#bacbd3;font-size:14px;margin:0 0 32px}.nav-label,.eyebrow{font-weight:700;text-transform:uppercase;letter-spacing:.1em;font-size:13px;margin:0 0 5px}.nav-label{color:#aac0cc;margin-top:32px}.category-link{display:flex;gap:13px;text-decoration:none;color:#fff;padding:15px 0;border-bottom:1px solid #ffffff23;font-size:15px;line-height:1.45}.category-link:hover{color:#ff9eae}.category-link small{display:block;color:#b5c7d1;margin-top:7px;font-size:13px}.toc-index{color:#ff879b;font-size:14px}.side-link{display:block;color:#e6eef3;margin:12px 0;font-size:15px;text-decoration:none}.side-note{border-left:2px solid #ff7288;padding-left:14px;margin-top:36px;color:#c5d4dc;font-size:14px}.main{max-width:1220px;margin-left:292px;padding:42px 48px 70px}.hero{border-top:5px solid var(--accent);padding:22px 0 24px}.hero .eyebrow{color:var(--accent)}h1{font-size:clamp(30px,3.4vw,48px);line-height:1.14;letter-spacing:-1.4px;margin:13px 0 16px}h1 span{font-weight:400}h2{font-size:23px;line-height:1.3;margin:3px 0 8px;letter-spacing:-.5px}h3{font-size:16px;margin:23px 0 8px}p{margin:10px 0}.subtitle{color:var(--muted);max-width:750px}.meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}.pill{font-size:14px;border:1px solid var(--line);padding:4px 12px;border-radius:20px;background:white}.controls{border:1px solid var(--line);background:#fff;padding:20px;border-radius:12px;margin-bottom:30px}.control-row{display:flex;gap:12px;align-items:end}.field{flex:1;min-width:0}.field label{display:block;font-size:14px;font-weight:650;margin-bottom:5px}input,select{width:100%;min-height:46px;border:1px solid #aebbc4;border-radius:7px;padding:9px 12px;background:#fff;color:var(--ink)}.select-field{flex:.75}.action-row{display:flex;gap:9px;flex-wrap:wrap;align-items:center;margin-top:15px}button{border:1px solid var(--line);background:white;border-radius:6px;color:var(--ink);padding:7px 12px;font-size:14px}button:hover{background:#edf2f6}#result-count{font-size:14px;color:var(--muted);margin-right:auto}.part{margin:38px 0}.part-heading{display:flex;gap:18px;align-items:start;margin-bottom:18px}.part-number{font-size:33px;font-weight:750;line-height:1.2;color:var(--accent);border-top:2px solid;padding-top:7px}.part-heading .eyebrow{color:var(--muted);font-size:12px}.framework{font-size:14px;color:var(--muted);margin:6px 0}.count{margin-left:auto;background:#e6ecf1;padding:1px 10px;border-radius:20px;font-size:14px}.question{background:white;border:1px solid var(--line);border-radius:9px;margin:10px 0;overflow:hidden;scroll-margin-top:24px}.question[open]{border-color:#bac6ce;box-shadow:0 4px 12px #14293406}.question summary{display:flex;align-items:center;gap:15px;padding:18px 21px;cursor:pointer;list-style:none;line-height:1.5}.question summary::-webkit-details-marker{display:none}.q-number{color:var(--accent);font-size:14px;font-weight:750;font-variant-numeric:tabular-nums}.question-title{font-weight:650}.chevron{margin-left:auto;color:var(--muted);font-size:22px;flex-shrink:0}.question[open] .chevron{transform:rotate(45deg)}.answer{padding:0 24px 23px 58px;border-top:1px solid #edf0f2}.answer h3{color:#435563;font-size:14px;letter-spacing:.02em}.answer h4{font-size:15px}.answer h3.jay-label{color:var(--accent);border-left:3px solid var(--accent);padding-left:10px}.answer>p:first-child{margin-top:19px}blockquote{margin:16px 0;background:#f1f6f8;border-left:3px solid #668698;padding:10px 18px;font-size:17px}blockquote p{margin:5px 0}pre{background:#142934;color:#e3f0f6;padding:17px 20px;border-radius:7px;overflow:auto;font-size:14px;line-height:1.65}code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:.88em}p code,li code{background:#eaf0f4;padding:2px 5px;border-radius:4px}ul,ol{padding-left:25px}li{margin:4px 0}hr{border:0;border-top:1px solid var(--line);margin:22px 0}.permalink{font-size:13px;color:var(--muted);text-decoration:none}.review{border-top:3px solid var(--nav);padding-top:24px;margin-top:55px}.review-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}.review-card{background:#fff;border:1px solid var(--line);border-radius:9px;padding:20px}.review-card h3{margin:0 0 12px;color:var(--accent)}.review-card p{font-size:15px}.review-card.wide{grid-column:1/-1}.sequence{font-weight:650;color:#274d62;line-height:1.9}.story{display:grid;grid-template-columns:180px 1fr;gap:15px;border-top:1px solid var(--line);padding:16px 0}.story strong{color:var(--accent)}.story p{margin:0}.note{font-size:14px;color:var(--muted);padding:18px;background:#edf1f4;border-radius:8px;margin-top:22px}footer{margin-top:40px;border-top:1px solid var(--line);padding-top:18px;font-size:14px;color:var(--muted)}[hidden]{display:none!important}#empty{padding:35px;text-align:center;background:white;border:1px dashed #aebbc4;border-radius:10px}.question-title{overflow-wrap:anywhere}.no-js{padding:12px;background:#fff0dc}.toolbar-help{font-size:13px;color:var(--muted);margin:12px 0 0}
+@media(min-width:1550px){.main{margin-left:max(292px,calc((100vw - 1000px)/2))}}@media(max-width:1000px){.sidebar{width:240px;padding:25px 18px}.main{margin-left:240px;padding:30px 25px}.review-grid{grid-template-columns:1fr}}@media(max-width:740px){.sidebar{position:relative;width:auto;padding:22px}.brand{font-size:21px}.edition{margin:0 0 12px}.sidebar nav{display:flex;flex-wrap:wrap;gap:6px 15px}.category-link{padding:7px 0;border:0;font-size:14px}.category-link small,.nav-label,.side-note,.toc-index{display:none}.side-link{display:inline-block;margin:8px 18px 0 0}.main{margin:0;padding:22px 18px 45px}.hero{padding-top:17px}h1{letter-spacing:-.7px}.control-row{flex-direction:column;align-items:stretch;gap:12px}.answer{padding:0 18px 20px}.question summary{padding:16px;gap:11px}.part-heading{gap:12px}h2{font-size:21px}.part-number{font-size:27px}.count{display:none}.review-grid{display:block}.review-card{margin:12px 0}.story{grid-template-columns:1fr;gap:4px}.controls{padding:15px}.part{margin-top:30px}pre{padding:14px;font-size:13px}#result-count{width:100%;flex-basis:100%}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}@media print{body{background:white}.sidebar,.controls,.skip,.permalink,.chevron{display:none!important}.main{max-width:none;margin:0;padding:0}.hero{border-width:2px}h1{font-size:30px}.question{break-inside:auto;box-shadow:none!important}.question summary{break-after:avoid}.answer{padding:0 20px 20px}.part-heading{break-after:avoid}.review-card,blockquote,pre{break-inside:avoid}pre{white-space:pre-wrap;color:#142934;background:#f1f4f5}a{color:inherit}.review-grid{display:block}.review-card{margin-bottom:12px}footer{font-size:12px}*{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+
+.importance-tag{display:inline-block;flex-shrink:0;border-radius:5px;padding:3px 9px;font-size:12px;font-weight:800;letter-spacing:.02em}.critical{background:#ffe2e9;color:#9a1734}.high{background:#fff0cd;color:#805100}.medium{background:#e6eefb;color:#284f85}.low{background:#edf0f3;color:#53606d}.question.importance-critical{border-left:5px solid #c8274b}.question.importance-high{border-left:5px solid #c78a14}.importance-critical>summary{background:#fff7f9}.importance-high>summary{background:#fffdf4}.importance-reason{background:#f6f7fa;padding:13px 16px;border-radius:6px;font-size:14px}.priority-intro{background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px;margin-bottom:20px}.priority-intro p{font-size:14px;color:var(--muted)}.priority-quick{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}.priority-quick button[aria-pressed="true"]{background:#142934;color:white;border-color:#142934}.priority-row{margin-top:14px}.category-caption{display:block;font-weight:400;font-size:12px;color:var(--muted);margin-top:4px}.question-title{flex:1}.question .chevron{margin-left:0}#priority-list>h2{margin:28px 0 18px}@media(max-width:740px){.question summary{flex-wrap:wrap}.question-title{flex-basis:calc(100% - 55px)}.importance-tag{margin-left:28px}.question .chevron{margin-left:auto}.priority-quick button{flex-grow:1}}@media print{.priority-intro{display:none}}
+
+.study-tools{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:15px 0}.study-tools label{display:flex;align-items:center;gap:8px}.study-tools input,.done-label input{width:18px;min-height:18px;height:18px;accent-color:#cf2846}.study-tools select{width:auto}.done-label{display:flex;align-items:center;gap:5px;font-size:13px;white-space:nowrap}.question.completed .q-number{color:#258166}.study-progress{width:140px;height:9px;accent-color:#cf2846}.quiz-panel{display:none;padding:20px 24px;border-top:1px solid var(--line)}.quiz-mode .quiz-panel{display:block}.quiz-mode .question:not(.revealed)>.answer{display:none}.quiz-prompt{margin-bottom:14px}.quiz-prompt h3{margin-top:0}.study-note{font-size:13px;color:var(--muted)}.story-practice{padding:12px 0;color:var(--muted);font-size:14px}.hero h1{font-size:30px}.hero h1 span{display:none}.hero{padding-bottom:10px}.priority-intro{padding:14px 20px}.priority-intro h2{font-size:20px}.priority-intro p{margin:5px 0}
+html[data-theme="dark"]{color-scheme:dark;--ink:#e4edf3;--muted:#abbcca;--line:#3a4b5a;--paper:#1b2935;--tint:#101b24;--accent:#ff8fa6;--nav:#0b1720}
+html[data-theme="dark"] :is(.controls,.priority-intro,.question,.review-card,.pill,button,input,select,#empty){background:#1b2935;color:var(--ink)}html[data-theme="dark"] .importance-critical>summary{background:#352331}html[data-theme="dark"] .importance-high>summary{background:#332c21}html[data-theme="dark"] :is(.importance-reason,.note,blockquote,p code,li code,.count){background:#253745;color:var(--ink)}html[data-theme="dark"] :is(.answer h3,.sequence){color:#c4dbe9}html[data-theme="dark"] .answer{border-top-color:var(--line)}html[data-theme="dark"] button:hover{background:#32495a}html[data-theme="dark"] .priority-quick button[aria-pressed="true"]{background:#dceaf3;color:#152633}html[data-theme="dark"] .review{border-top-color:var(--line)}
+@media(max-width:740px){.done-label{margin-left:28px}.study-tools{gap:12px}.quiz-panel{padding:18px}.hero h1{font-size:27px}}@media print{html[data-theme="dark"]{--ink:#17232d;--muted:#596775;--line:#dce2e7;--accent:#cf2846;color-scheme:light;background:white}html[data-theme="dark"] :is(.question,.review-card,.note,blockquote,.importance-reason,.question>summary){background:white;color:#17232d}.study-tools,.done-label,.quiz-panel{display:none!important}.quiz-mode .question>.answer{display:block!important}}
+
+.code-pad{border-top:1px solid var(--line);padding:18px 24px;background:var(--tint)}.code-pad h3{margin:0 0 8px}.code-pad textarea{display:block;width:100%;min-height:190px;resize:vertical;tab-size:4;font:14px/1.6 ui-monospace,SFMono-Regular,Consolas,monospace;padding:14px;background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:8px}.pad-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.pad-output{white-space:pre-wrap;overflow-wrap:anywhere;max-height:450px;overflow:auto}.pad-status{font-size:14px;color:var(--muted)}.code-pad button:disabled{opacity:.6;cursor:wait}@media print{.code-pad{display:none}}
+
+.question-title{color:#a51c40;font-weight:800}html[data-theme="dark"] .question-title{color:#ffa4b9}.question-title .category-caption{font-weight:400;color:var(--muted)}.answer h3.question-label{color:var(--accent);font-weight:800;font-size:16px}.question-prompt,.quiz-prompt{font-weight:700;color:#174f76;background:#eef6fc;border-left:4px solid #3286b5;padding:12px 16px;border-radius:5px}html[data-theme="dark"] :is(.question-prompt,.quiz-prompt){color:#c3e7ff;background:#203749}.pad-output{padding:16px;border:1px solid var(--line);border-radius:8px;background:var(--paper);color:var(--ink)}.pad-output.markdown-reply{white-space:normal;font-family:inherit;font-size:16px;line-height:1.75;max-height:600px}.markdown-reply :is(h1,h2,h3,h4,h5,h6){font-size:17px;line-height:1.4;color:var(--accent);margin:16px 0 8px}.markdown-reply>:first-child{margin-top:0}.markdown-reply>:last-child{margin-bottom:0}.markdown-reply pre{white-space:pre;overflow-x:auto;font-size:14px}.markdown-reply pre code{font-size:inherit}.markdown-reply blockquote{font-size:16px}.markdown-reply table{border-collapse:collapse;display:block;overflow:auto}.markdown-reply :is(th,td){padding:8px;border:1px solid var(--line)}
+
+.markdown-reply pre{background:#172635;color:#e6edf3}.py-keyword{color:#ff9db9;font-weight:650}.py-string{color:#b4e3a6}.py-comment{color:#a2b5c6;font-style:italic}.py-number{color:#e6bd85}.py-builtin{color:#8fd6f7}.markdown-reply>.answer{padding:0;border:0}.markdown-reply pre code{background:transparent}
+</style></head><body><a class="skip" href="#main">본문으로 바로가기</a><aside class="sidebar"><div class="brand">airbnb<span> / </span>field notes</div><p class="edition">Jay’s Senior Staff ML interview guide</p><p class="nav-label">Question bank / 목차</p><nav aria-label="카테고리 목차"><a href="#part-0" class="category-link"><span class="toc-index">01</span><span>Coding / Problem Solving<small>Q1–10 · 10 questions</small></span></a><a href="#part-1" class="category-link"><span class="toc-index">02</span><span>LLM / ML Technical<small>Q11–25 · 15 questions</small></span></a><a href="#part-2" class="category-link"><span class="toc-index">03</span><span>ML / LLM System Design<small>Q26–35 · 10 questions</small></span></a><a href="#part-3" class="category-link"><span class="toc-index">04</span><span>Senior Staff / Technical Leadership<small>Q36–45 · 10 questions</small></span></a><a href="#part-4" class="category-link"><span class="toc-index">05</span><span>Airbnb Core Values / Culture<small>Q46–50 · 5 questions</small></span></a></nav><p class="nav-label">Before the interview</p><a class="side-link" href="#quick-review">↗ Quick-review frameworks</a><a class="side-link" href="#jay-stories">↗ Jay’s story bank</a><a class="side-link" href="#source-note">출처 및 편집 메모</a><p class="side-note">“The smallest and simplest system that reliably meets the product requirement.”</p></aside><main class="main" id="main"><header class="hero"><p class="eyebrow">Interview field guide / 50 questions</p><h1>Senior Staff ML<span><br>From reasoning to impact.</span></h1><p class="subtitle">CS AI · LLM Fine-tuning & Optimization<br>영어 질문과 예시 답변, 한국어 해설, Jay의 경험 연결을 한곳에.</p><div class="meta"><span class="pill">50 questions</span><span class="pill">5 categories</span><span class="pill">한국어 + English</span><span class="pill">Offline-ready</span></div></header><section class="priority-intro"><p class="eyebrow">Preparation priorities</p><h2>합격에 영향을 줄 핵심부터.</h2><p>제공된 JD와 원 대화에 근거한 편집상 준비 우선순위입니다. 공식 면접 배점이나 출제 확률은 아닙니다. CS AI 설계, post-training, 평가·최적화, 여러 팀을 이끄는 Senior Staff 역량에 높은 비중을 두었습니다. Coding 및 culture 면접의 기본 bar도 별도로 준비하세요.</p><div><span class="importance-tag critical">Critical · 반드시 깊게</span> <span class="importance-tag high">High · 탄탄하게</span> <span class="importance-tag medium">Medium · 기본 대비</span> <span class="importance-tag low">Low · 여유 시 확장</span></div></section><noscript><p class="no-js">JavaScript가 꺼져 있습니다. 50문항과 목차, 개별 접기/펼치기는 그대로 사용할 수 있습니다.</p></noscript><div class="controls" id="controls" hidden><div class="study-tools"><button id="theme-toggle" type="button" aria-pressed="false">다크모드</button><label><input type="checkbox" id="quiz-toggle"> 퀴즈 모드</label><a href="#jay-stories">Jay 경험 모아보기</a><span id="study-count" role="status"></span><progress class="study-progress" id="study-progress" max="50" value="0" aria-label="학습 완료 진행률"></progress></div><div class="field"><label for="study-filter">학습 상태</label><select id="study-filter"><option value="all">전체 문항</option><option value="todo">미완료만</option><option value="done">완료만</option></select></div><p class="study-note" id="save-note">완료 표시와 화면 설정은 이 브라우저에 저장됩니다. 파일을 이동하거나 다른 브라우저를 사용하면 별도로 저장될 수 있습니다.</p><div class="control-row"><div class="field"><label for="search">질문 · 답변 검색</label><input id="search" type="search" placeholder="예: LoRA, latency, Jay, roadmap" autocomplete="off"></div><div class="field select-field"><label for="category">카테고리</label><select id="category"><option value="all">전체 카테고리</option><option value="0">Coding / Problem Solving</option><option value="1">LLM / ML Technical</option><option value="2">ML / LLM System Design</option><option value="3">Senior Staff / Technical Leadership</option><option value="4">Airbnb Core Values / Culture</option></select></div></div><div class="priority-quick" role="group" aria-label="빠른 중요도 필터"><button type="button" data-priority="all" aria-pressed="true">전체 50</button><button type="button" data-priority="Critical" aria-pressed="false">Critical만</button><button type="button" data-priority="High+" aria-pressed="false">High+ · Critical 포함</button></div><div class="control-row priority-row"><div class="field"><label for="importance">중요도</label><select id="importance"><option value="all">전체 중요도</option><option>Critical</option><option value="High+">High+ (Critical + High)</option><option>High</option><option>Medium</option><option>Low</option></select></div><div class="field"><label for="sort">정렬</label><select id="sort"><option value="important">Important first · 중요도순</option><option value="category">카테고리순 · 원문 순서</option></select></div></div><div class="action-row"><span id="result-count" role="status" aria-live="polite">50 / 50 questions</span><button id="expand" type="button">결과 모두 펼치기</button><button id="collapse" type="button">결과 모두 접기</button><button id="reset" type="button">초기화</button><button id="print" type="button">전체 인쇄 / PDF</button></div><p class="toolbar-help">검색은 접힌 답변·중요도 선정 이유까지 포함하며, 여러 키워드는 모두 포함된 문항을 찾습니다. 중요도와 카테고리 필터는 함께 적용됩니다. 문항 제목을 누르면 답변이 열립니다.</p></div><p id="empty" hidden>검색 결과가 없습니다. 다른 키워드를 입력하거나 필터를 초기화하세요.</p><div id="question-bank"><section class="part" id="part-0"><header class="part-heading"><span class="part-number">01</span><div><p class="eyebrow">문제 해결 · 자료구조</p><h2>Coding / Problem Solving</h2><p class="framework">Constraints → Approach → Code → Complexity → Edge cases</p></div><span class="count">10</span></header><details class="question importance-medium" data-importance="Medium" data-category="0" id="q1" open><summary><span class="q-number">01</span><span class="question-title">Sliding Window: Customer Support Events</span><span class="importance-tag medium">Medium</span><span class="chevron" aria-hidden="true">+</span></summary><div class="answer"><p class="importance-reason"><strong>Medium · 준비 우선순위</strong><br>시간 창·상태 관리의 기본 coding 역량 확인.</p><h3>Question</h3>
+<p>You receive events:</p>
+<pre><code class="language-python">(timestamp, customer_id)
+</code></pre>
+<p>Return all customers who generated more than <code>k</code> events within the last 10 minutes.</p>
+<h3>Approach</h3>
+<p><code>customer_id → deque[timestamps]</code></p>
+<p>새 event가 오면:</p>
+<ol>
+<li>deque에 timestamp 추가</li>
+<li>10분보다 오래된 timestamp 제거</li>
+<li>deque 길이가 k보다 큰지 확인</li>
+</ol>
+<h3>Complexity</h3>
+<pre><code class="language-text">Time: O(n)
+Space: O(n)
+</code></pre>
+<p>각 event는 deque에 한 번 들어가고 한 번 빠진다.</p>
+<h3>Interview follow-up</h3>
+<blockquote>
+<p>What if you receive 1 million events per second?</p>
+</blockquote>
+<p>답변은:</p>
+<ul>
+<li>partition by customer_id</li>
+<li>distributed stream processing</li>
+<li>Kafka/Kinesis</li>
+<li>stateful processors</li>
+<li>TTL state</li>
+<li>checkpointing</li>
+<li>eventual vs exact semantics</li>
+</ul>
+<p>까지 확장.</p>
+<a class="permalink" href="#q1"># Q1 바로가기</a></div></details><details class="question importance-high" data-importance="High" data-category="0" id="q2" ><summary><span class="q-number">02</span><span class="question-title">Top-K Documents</span><span class="importance-tag high">High</span><span class="chevron" aria-hidden="true">+</span></summary><div class="answer"><p class="importance-reason"><strong>High · 준비 우선순위</strong><br>검색·RAG의 top-k 선택과 대규모 retrieval trade-off에 직접 연결.</p><h3>Question</h3>
+<p>Given <code>(document_id, similarity_score)</code>, return the top <code>k</code> documents.</p>
+<h3>Best approach</h3>
+<p>Min heap of size K.</p>
+<pre><code class="language-text">Time: O(n log k)
+Space: O(k)
+</code></pre>
+<h3>Follow-up</h3>
+<blockquote>
+<p>What if you have one billion embeddings?</p>
+</blockquote>
+<p>여기서 coding을 ML system으로 확장한다.</p>
+<ul>
+<li>exact search 불가능</li>
+<li>ANN</li>
+<li>HNSW</li>
+<li>IVF</li>
+<li>quantization</li>
+<li>distributed vector index</li>
+<li>recall vs latency tradeoff</li>
+</ul>
+<a class="permalink" href="#q2"># Q2 바로가기</a></div></details><details class="question importance-medium" data-importance="Medium" data-category="0" id="q3" ><summary><span class="q-number">03</span><span class="question-title">Merge Intervals</span><span class="importance-tag medium">Medium</span><span class="chevron" aria-hidden="true">+</span></summary><div class="answer"><p class="importance-reason"><strong>Medium · 준비 우선순위</strong><br>정렬·경계 조건을 설명하는 기본 coding bar 대비.</p><h3>Question</h3>
+<p>Merge overlapping reservation or support intervals.</p>
+<pre><code class="language-python">[(1,4), (3,7), (10,12), (11,15)]
+</code></pre>
+<p>결과:</p>
+<pre><code class="language-python">[(1,7), (10,15)]
+</code></pre>
+<h3>Approach</h3>
+<p>Sort by start time → linear scan.</p>
+<pre><code class="language-text">O(n log n)
+</code></pre>
+<h3>Important</h3>
+<p>코딩 전에 말한다.</p>
+<blockquote>
+<p>“I&#39;ll sort by start time first. After sorting, every new interval only needs to be compared against the most recently merged interval.”</p>
+</blockquote>
+<a class="permalink" href="#q3"># Q3 바로가기</a></div></details><details class="question importance-medium" data-importance="Medium" data-category="0" id="q4" ><summary><span class="q-number">04</span><span class="question-title">LRU Cache</span><span class="importance-tag medium">Medium</span><span class="chevron" aria-hidden="true">+</span></summary><div class="answer"><p class="importance-reason"><strong>Medium · 준비 우선순위</strong><br>자료구조 구현과 inference cache 설계의 기초.</p><h3>Question</h3>
+<p>Implement an LRU cache with:</p>
+<pre><code class="language-python">get(key)
+put(key, value)
+</code></pre>
+<p>둘 다 O(1).</p>
+<h3>Structure</h3>
+<pre><code class="language-text">HashMap
++
+Doubly Linked List
+</code></pre>
+<h3>Why Airbnb might care</h3>
+<p>Caching:</p>
+<ul>
+<li>listing information</li>
+<li>embeddings</li>
+<li>prompt/context</li>
+<li>policy documents</li>
+<li>model responses</li>
+</ul>
+<p>follow-up으로 자연스럽게 연결 가능.</p>
+<a class="permalink" href="#q4"># Q4 바로가기</a></div></details><details class="question importance-medium" data-importance="Medium" data-category="0" id="q5" ><summary><span class="q-number">05</span><span class="question-title">Conversation Graph</span><span class="importance-tag medium">Medium</span><span class="chevron" aria-hidden="true">+</span></summary><div class="answer"><p class="importance-reason"><strong>Medium · 준비 우선순위</strong><br>그래프 탐색의 정확성과 확장성 설명 연습.</p><h3>Question</h3>
+<p>Users can transfer customer-support conversations between agents. Determine whether agent A can eventually transfer to agent B.</p>
+<h3>Approach</h3>
+<p>Graph traversal.</p>
+<pre><code class="language-text">BFS or DFS
+O(V + E)
+</code></pre>
+<h3>Follow-up</h3>
+<blockquote>
+<p>What if the graph has hundreds of millions of nodes?</p>
+</blockquote>
+<ul>
+<li>distributed graph storage</li>
+<li>precomputed reachability가 가능한지</li>
+<li>query patterns</li>
+<li>partitioning</li>
+<li>caching</li>
+</ul>
+<p>등을 논의.</p>
+<a class="permalink" href="#q5"># Q5 바로가기</a></div></details><details class="question importance-high" data-importance="High" data-category="0" id="q6" ><summary><span class="q-number">06</span><span class="question-title">Rate Limiter</span><span class="importance-tag high">High</span><span class="chevron" aria-hidden="true">+</span></summary><div class="answer"><p class="importance-reason"><strong>High · 준비 우선순위</strong><br>실시간 CS AI의 트래픽 제어·분산 일관성과 연결.</p><h3>Question</h3>
+<p>Implement a rate limiter allowing a user at most 100 requests per minute.</p>
+<h3>Solutions</h3>
+<p>Basic:</p>
+<pre><code class="language-text">Sliding window + deque
+</code></pre>
+<p>Production:</p>
+<pre><code class="language-text">Token bucket
+or
+Leaky bucket
+</code></pre>
+<h3>Follow-up</h3>
+<p>Distributed 환경에서는:</p>
+<ul>
+<li>Redis</li>
+<li>atomic operation</li>
+<li>clock synchronization</li>
+<li>consistency</li>
+<li>regional limits</li>
+</ul>
+<p>언급.</p>
+<a class="permalink" href="#q6"># Q6 바로가기</a></div></details><details class="question importance-low" data-importance="Low" data-category="0" id="q7" ><summary><span class="q-number">07</span><span class="question-title">Trie / Prefix Search</span><span class="importance-tag low">Low</span><span class="chevron" aria-hidden="true">+</span></summary><div class="answer"><p class="importance-reason"><strong>Low · 준비 우선순위</strong><br>특정 자료구조 연습이며 이 역할의 post-training 핵심과는 간접적.</p><h3>Question</h3>
+<p>Implement autocomplete for customer-support topics.</p>
+<p>Example:</p>
+<pre><code class="language-text">cancel...
+cancellation
+cancellation policy
+cancel booking
+</code></pre>
+<h3>Approach</h3>
+<p>Trie.</p>
+<h3>Follow-up</h3>
+<p>대규모 production이라면:</p>
+<ul>
+<li>popularity ranking</li>
+<li>caching</li>
+<li>prefix index</li>
+<li>typo tolerance</li>
+<li>learned retrieval</li>
+</ul>
+<p>까지 확장.</p>
+<a class="permalink" href="#q7"># Q7 바로가기</a></div></details><details class="question importance-medium" data-importance="Medium" data-category="0" id="q8" ><summary><span class="q-number">08</span><span class="question-title">Deduplicate Conversations</span><span class="importance-tag medium">Medium</span><span class="chevron" aria-hidden="true">+</span></summary><div class="answer"><p class="importance-reason"><strong>Medium · 준비 우선순위</strong><br>대규모 데이터 처리·학습 데이터 중복 제거의 기초.</p><h3>Question</h3>
+<p>Given millions of conversation IDs, find duplicates.</p>
+<h3>Basic</h3>
+<p>HashSet:</p>
+<pre><code class="language-text">O(n)
+</code></pre>
+<h3>Follow-up</h3>
+<p>Data가 memory보다 크다면:</p>
+<ul>
+<li>partition/hash</li>
+<li>external sort</li>
+<li>Bloom filter</li>
+<li>distributed processing</li>
+</ul>
+<p>으로 확장.</p>
+<a class="permalink" href="#q8"># Q8 바로가기</a></div></details><details class="question importance-medium" data-importance="Medium" data-category="0" id="q9" ><summary><span class="q-number">09</span><span class="question-title">Running Median of Latency</span><span class="importance-tag medium">Medium</span><span class="chevron" aria-hidden="true">+</span></summary><div class="answer"><p class="importance-reason"><strong>Medium · 준비 우선순위</strong><br>스트리밍 알고리즘과 serving latency 측정 이해 확인.</p><h3>Question</h3>
+<p>Streaming inference latency가 계속 들어올 때 median을 유지하라.</p>
+<h3>Solution</h3>
+<p>Two heaps:</p>
+<pre><code class="language-text">Max heap: lower half
+Min heap: upper half
+</code></pre>
+<p>Insertion:</p>
+<pre><code class="language-text">O(log n)
+</code></pre>
+<p>Median:</p>
+<pre><code class="language-text">O(1)
+</code></pre>
+<h3>Senior Staff extension</h3>
+<p>실제 production에서는 median보다:</p>
+<pre><code class="language-text">p50
+p95
+p99
+</code></pre>
+<p>가 중요하다는 이야기를 자연스럽게 한다.</p>
+<a class="permalink" href="#q9"># Q9 바로가기</a></div></details><details class="question importance-medium" data-importance="Medium" data-category="0" id="q10" ><summary><span class="q-number">10</span><span class="question-title">BFS Shortest Path</span><span class="importance-tag medium">Medium</span><span class="chevron" aria-hidden="true">+</span></summary><div class="answer"><p class="importance-reason"><strong>Medium · 준비 우선순위</strong><br>기본 coding bar인 탐색·복잡도·edge case 설명 연습.</p><h3>Question</h3>
+<p>Customer가 여행 disruption을 해결하기 위한 여러 action을 graph로 표현한다.</p>
+<p>최소 action sequence를 찾으라.</p>
+<h3>Approach</h3>
+<p>Unweighted graph라면 BFS.</p>
+<h3>What interviewer evaluates</h3>
+<p>문제 자체보다:</p>
+<ul>
+<li>constraints를 묻는가</li>
+<li>edge cases 확인하는가</li>
+<li>complexity 설명하는가</li>
+<li>clean code를 쓰는가</li>
+</ul>
+<a class="permalink" href="#q10"># Q10 바로가기</a></div></details></section><section class="part" id="part-1"><header class="part-heading"><span class="part-number">02</span><div><p class="eyebrow">모델 · 학습 · 평가</p><h2>LLM / ML Technical</h2><p class="framework">Quality · Latency · Cost · Reliability</p></div><span class="count">15</span></header><details class="question importance-critical" data-importance="Critical" data-category="1" id="q11" ><summary><span class="q-number">11</span><span class="question-title">Fine-tuning vs Prompting vs RAG</span><span class="importance-tag critical">Critical</span><span class="chevron" aria-hidden="true">+</span></summary><div class="answer"><p class="importance-reason"><strong>Critical · 준비 우선순위</strong><br>역할의 핵심인 fine-tuning 투자 판단과 RAG 경계를 설명.</p><h3>Question</h3>
+<blockquote>
+<p>When would you fine-tune instead of using prompting or RAG?</p>
+</blockquote>
+<h3>Strong answer</h3>
+<blockquote>
+<p>“I separate knowledge problems from behavior problems. If the model lacks fresh or proprietary knowledge, I usually start with retrieval. If the model understands the task but doesn&#39;t consistently exhibit the desired behavior or decision boundary, fine-tuning becomes more attractive. Prompting is usually my first option when the task is still evolving because it gives the fastest iteration cycle.”</p>
+</blockquote>
+<p>그리고:</p>
+<blockquote>
+<p>“They&#39;re often complementary rather than mutually exclusive.”</p>
+</blockquote>
+<h3 class="jay-label">Jay connection</h3>
+<p>Intuit의 production SLM은 frontier LLM call을 대체하면서 약 <strong>8× latency reduction과 97%+ reliability</strong>를 달성했다.</p>
+<a class="permalink" href="#q11"># Q11 바로가기</a></div></details><details class="question importance-critical" data-importance="Critical" data-category="1" id="q12" ><summary><span class="q-number">12</span><span class="question-title">Why use an SLM instead of a frontier LLM?</span><span class="importance-tag critical">Critical</span><span class="chevron" aria-hidden="true">+</span></summary><div class="answer"><p class="importance-reason"><strong>Critical · 준비 우선순위</strong><br>SLM 선택을 품질·비용·지연·신뢰성 및 본인 성과로 입증.</p><h3>Answer</h3>
+<p>네 가지 axis:</p>
+<pre><code class="language-text">Quality
+Latency
+Cost
+Reliability
+</code></pre>
+<blockquote>
+<p>“The objective isn&#39;t to use the most capable model available. It&#39;s to use the smallest and simplest system that reliably meets the product requirement.”</p>
+</blockquote>
+<h3 class="jay-label">Jay story</h3>
+<p>이건 본인의 가장 강한 답변.</p>
+<blockquote>
+<p>“We found that a specialized smaller model could meet the quality target while materially improving latency and operational reliability.”</p>
+</blockquote>
+<a class="permalink" href="#q12"># Q12 바로가기</a></div></details><details class="question importance-critical" data-importance="Critical" data-category="1" id="q13" ><summary><span class="q-number">13</span><span class="question-title">How do you construct an SFT dataset?</span><span class="importance-tag critical">Critical</span><span class="chevron" aria-hidden="true">+</span></summary><div class="answer"><p class="importance-reason"><strong>Critical · 준비 우선순위</strong><br>실제 SFT 수행 역량은 데이터 설계·누수 방지·오류 분석에서 드러남.</p><h3>Structure</h3>
+<ol>
+<li>Define desired behavior</li>
+<li>Source real examples</li>
+<li>Remove PII/sensitive content</li>
+<li>Deduplicate</li>
+<li>Correct labels</li>
+<li>Cover long-tail cases</li>
+<li>Add synthetic examples selectively</li>
+<li>Separate train/eval carefully</li>
+<li>Train</li>
+<li>Error analysis</li>
+<li>Iterate</li>
+</ol>
+<h3>Senior Staff point</h3>
+<blockquote>
+<p>“Dataset quality usually dominates another round of hyperparameter optimization.”</p>
+</blockquote>
+<a class="permalink" href="#q13"># Q13 바로가기</a></div></details><details class="question importance-high" data-importance="High" data-category="1" id="q14" ><summary><span class="q-number">14</span><span class="question-title">What is the difference between SFT and DPO?</span><span class="importance-tag high">High</span><span class="chevron" aria-hidden="true">+</span></summary><div class="answer"><p class="importance-reason"><strong>High · 준비 우선순위</strong><br>post-training 및 alignment 기법의 목적 차이를 명확히 설명.</p><h3>Answer</h3>
+<p><strong>SFT</strong></p>
+<p>Learn:</p>
+<pre><code class="language-text">input → desired response
+</code></pre>
+<p><strong>DPO</strong></p>
+<p>Learn preference:</p>
+<pre><code class="language-text">chosen response &gt; rejected response
+</code></pre>
+<h3>Strong explanation</h3>
+<blockquote>
+<p>“SFT teaches the model what a good answer looks like. Preference optimization teaches the model which of multiple plausible answers better matches our desired behavior.”</p>
+</blockquote>
+<a class="permalink" href="#q14"># Q14 바로가기</a></div></details><details class="question importance-critical" data-importance="Critical" data-category="1" id="q15" ><summary><span class="q-number">15</span><span class="question-title">DPO vs PPO/RLHF</span><span class="importance-tag critical">Critical</span><span class="chevron" aria-hidden="true">+</span></summary><div class="answer"><p class="importance-reason"><strong>Critical · 준비 우선순위</strong><br>RL 도입 판단·복잡도·reward 위험을 포함한 기술 깊이 확인.</p><h3>Answer</h3>
+<p>DPO:</p>
+<ul>
+<li>simpler</li>
+<li>offline preference pairs</li>
+<li>stable training</li>
+<li>no explicit reward model required in basic setup</li>
+</ul>
+<p>PPO/RLHF:</p>
+<ul>
+<li>supports explicit reward optimization</li>
+<li>potentially more flexible</li>
+<li>operationally more complex</li>
+<li>reward hacking/stability concerns</li>
+</ul>
+<h3>Great Senior Staff line</h3>
+<blockquote>
+<p>“I wouldn&#39;t introduce RL complexity unless the remaining error distribution actually requires it.”</p>
+</blockquote>
+<a class="permalink" href="#q15"># Q15 바로가기</a></div></details><details class="question importance-high" data-importance="High" data-category="1" id="q16" ><summary><span class="q-number">16</span><span class="question-title">What can go wrong with synthetic training data?</span><span class="importance-tag high">High</span><span class="chevron" aria-hidden="true">+</span></summary><div class="answer"><p class="importance-reason"><strong>High · 준비 우선순위</strong><br>합성 데이터 품질과 오염은 학습 결과의 신뢰성에 직접 영향.</p><h3>Discuss</h3>
+<ul>
+<li>teacher-model bias</li>
+<li>loss of diversity</li>
+<li>incorrect labels</li>
+<li>contamination</li>
+<li>unrealistic distributions</li>
+<li>stylistic homogenization</li>
+<li>amplification of hallucinations</li>
+</ul>
+<h3>Answer line</h3>
+<blockquote>
+<p>“Synthetic data is useful for coverage, but I don&#39;t want the student model simply learning the teacher&#39;s blind spots.”</p>
+</blockquote>
+<a class="permalink" href="#q16"># Q16 바로가기</a></div></details><details class="question importance-high" data-importance="High" data-category="1" id="q17" ><summary><span class="q-number">17</span><span class="question-title">Explain LoRA</span><span class="importance-tag high">High</span><span class="chevron" aria-hidden="true">+</span></summary><div class="answer"><p class="importance-reason"><strong>High · 준비 우선순위</strong><br>fine-tuning의 구현 선택과 학습·serving trade-off 확인.</p><h3>Answer</h3>
+<p>Instead of updating full weight matrix:</p>
+<pre><code class="language-text">W&#39; = W + BA
+</code></pre>
+<p>where low-rank matrices B/A are trained.</p>
+<p>Benefits:</p>
+<ul>
+<li>lower GPU memory</li>
+<li>faster training</li>
+<li>easier multiple adapters</li>
+</ul>
+<h3>Follow-up</h3>
+<p>LoRA vs full fine-tuning?</p>
+<p>Answer:</p>
+<p>depends on:</p>
+<ul>
+<li>data volume</li>
+<li>distribution shift</li>
+<li>desired capacity</li>
+<li>infrastructure</li>
+<li>serving architecture</li>
+</ul>
+<a class="permalink" href="#q17"># Q17 바로가기</a></div></details><details class="question importance-high" data-importance="High" data-category="1" id="q18" ><summary><span class="q-number">18</span><span class="question-title">What is quantization?</span><span class="importance-tag high">High</span><span class="chevron" aria-hidden="true">+</span></summary><div class="answer"><p class="importance-reason"><strong>High · 준비 우선순위</strong><br>optimization 역할에 필요한 정밀도·품질·하드웨어 판단.</p><h3>Answer</h3>
+<p>Reduce numerical precision:</p>
+<pre><code class="language-text">FP16/BF16 → INT8 → INT4
+</code></pre>
+<p>Benefits:</p>
+<ul>
+<li>memory reduction</li>
+<li>throughput improvement</li>
+<li>potentially lower latency</li>
+</ul>
+<p>Tradeoff:</p>
+<ul>
+<li>quality degradation</li>
+<li>kernel/hardware support</li>
+</ul>
+<h3>Follow-up</h3>
+<blockquote>
+<p>Would you quantize every model?</p>
+</blockquote>
+<p>No.</p>
+<p>Benchmark task quality and actual serving latency first.</p>
+<a class="permalink" href="#q18"># Q18 바로가기</a></div></details><details class="question importance-critical" data-importance="Critical" data-category="1" id="q19" ><summary><span class="q-number">19</span><span class="question-title">How would you reduce LLM inference latency?</span><span class="importance-tag critical">Critical</span><span class="chevron" aria-hidden="true">+</span></summary><div class="answer"><p class="importance-reason"><strong>Critical · 준비 우선순위</strong><br>지연 최적화는 JD와 SLM·24-wave 경험의 직접 접점.</p><h3>Structure</h3>
+<h4>Model</h4>
+<ul>
+<li>smaller model</li>
+<li>distillation</li>
+<li>quantization</li>
+</ul>
+<h4>Prompt</h4>
+<ul>
+<li>context reduction</li>
+<li>retrieval pruning</li>
+</ul>
+<h4>Serving</h4>
+<ul>
+<li>continuous batching</li>
+<li>KV caching</li>
+<li>prefix caching</li>
+<li>speculative decoding</li>
+</ul>
+<h4>Infrastructure</h4>
+<ul>
+<li>optimized kernels</li>
+<li>GPU utilization</li>
+<li>tensor parallelism</li>
+</ul>
+<h4>Product</h4>
+<ul>
+<li>streaming</li>
+<li>async operations</li>
+<li>model routing</li>
+</ul>
+<h3 class="jay-label">Jay&#39;s killer line</h3>
+<blockquote>
+<p>“And sometimes the best LLM inference optimization is not using an LLM at all.”</p>
+</blockquote>
+<p>이어 본인의 24-wave study 이야기.</p>
+<p>Frontier multimodal LLM을 lightweight audio/text architecture로 대체해 production target을 약 <strong>1,000× fewer parameters</strong>로 달성했다.</p>
+<a class="permalink" href="#q19"># Q19 바로가기</a></div></details><details class="question importance-critical" data-importance="Critical" data-category="1" id="q20" ><summary><span class="q-number">20</span><span class="question-title">How do you evaluate an LLM?</span><span class="importance-tag critical">Critical</span><span class="chevron" aria-hidden="true">+</span></summary><div class="answer"><p class="importance-reason"><strong>Critical · 준비 우선순위</strong><br>모델 품질을 CS 해결률·안전·운영 지표까지 연결하는 핵심 역량.</p><h3>Start by separating levels.</h3>
+<h3>Model-level</h3>
+<ul>
+<li>accuracy</li>
+<li>task success</li>
+<li>groundedness</li>
+<li>hallucination</li>
+<li>policy compliance</li>
+</ul>
+<h3>System-level</h3>
+<ul>
+<li>retrieval quality</li>
+<li>tool-selection correctness</li>
+<li>escalation accuracy</li>
+</ul>
+<h3>Serving</h3>
+<ul>
+<li>p50/p95/p99 latency</li>
+<li>cost/query</li>
+<li>tokens</li>
+<li>reliability</li>
+</ul>
+<h3>Product</h3>
+<ul>
+<li>resolution</li>
+<li>CSAT</li>
+<li>re-contact</li>
+<li>handle time</li>
+<li>escalation</li>
+</ul>
+<h3>Strong line</h3>
+<blockquote>
+<p>“I don&#39;t believe a single aggregate LLM score is sufficient for a production system.”</p>
+</blockquote>
+<a class="permalink" href="#q20"># Q20 바로가기</a></div></details><details class="question importance-high" data-importance="High" data-category="1" id="q21" ><summary><span class="q-number">21</span><span class="question-title">Can you trust LLM-as-a-Judge?</span><span class="importance-tag high">High</span><span class="chevron" aria-hidden="true">+</span></summary><div class="answer"><p class="importance-reason"><strong>High · 준비 우선순위</strong><br>평가 신뢰성·human calibration 및 confidence model 경험 검증.</p><h3>Answer</h3>
+<blockquote>
+<p>“Yes as a scalable measurement tool; no as an unquestioned source of truth.”</p>
+</blockquote>
+<p>필요한 것:</p>
+<ul>
+<li>human gold set</li>
+<li>calibration</li>
+<li>judge bias analysis</li>
+<li>agreement measurement</li>
+<li>periodic auditing</li>
+</ul>
+<h3 class="jay-label">Jay connection</h3>
+<p>Resume의 confidence model:</p>
+<ul>
+<li>0.80 Pearson</li>
+<li>0.88 AUROC vs LLM judge</li>
+</ul>
+<p>를 바로 설명.</p>
+<a class="permalink" href="#q21"># Q21 바로가기</a></div></details><details class="question importance-high" data-importance="High" data-category="1" id="q22" ><summary><span class="q-number">22</span><span class="question-title">How do you detect hallucinations?</span><span class="importance-tag high">High</span><span class="chevron" aria-hidden="true">+</span></summary><div class="answer"><p class="importance-reason"><strong>High · 준비 우선순위</strong><br>정책·예약·금전 관련 CS 답변의 근거와 위험 통제 확인.</p><h3>Separate</h3>
+<p><strong>Grounded factual answer</strong></p>
+<p>→ compare claims with retrieved sources.</p>
+<p><strong>Open-ended generation</strong></p>
+<p>→ harder.</p>
+<p>Techniques:</p>
+<ul>
+<li>citation validation</li>
+<li>entailment</li>
+<li>judge model</li>
+<li>confidence estimation</li>
+<li>claim extraction</li>
+<li>human evaluation</li>
+</ul>
+<h3>Senior Staff answer</h3>
+<blockquote>
+<p>“For high-risk customer-support decisions, detection alone isn&#39;t sufficient. I&#39;d constrain the system so facts that affect money, reservations, or safety must come from authoritative sources or tools.”</p>
+</blockquote>
+<a class="permalink" href="#q22"># Q22 바로가기</a></div></details><details class="question importance-high" data-importance="High" data-category="1" id="q23" ><summary><span class="q-number">23</span><span class="question-title">How do you handle model drift?</span><span class="importance-tag high">High</span><span class="chevron" aria-hidden="true">+</span></summary><div class="answer"><p class="importance-reason"><strong>High · 준비 우선순위</strong><br>배포 후 품질 유지와 fallback·재학습 판단 확인.</p><h3>Monitor</h3>
+<p>Input distribution:</p>
+<pre><code class="language-text">topic
+language
+length
+intent
+embedding distribution
+</code></pre>
+<p>Output:</p>
+<pre><code class="language-text">quality
+confidence
+policy violations
+</code></pre>
+<p>Business:</p>
+<pre><code class="language-text">resolution
+escalation
+CSAT
+</code></pre>
+<h3>Response</h3>
+<ul>
+<li>retrain</li>
+<li>update RAG</li>
+<li>route to fallback</li>
+<li>threshold adjustment</li>
+</ul>
+<a class="permalink" href="#q23"># Q23 바로가기</a></div></details><details class="question importance-medium" data-importance="Medium" data-category="1" id="q24" ><summary><span class="q-number">24</span><span class="question-title">What is catastrophic forgetting?</span><span class="importance-tag medium">Medium</span><span class="chevron" aria-hidden="true">+</span></summary><div class="answer"><p class="importance-reason"><strong>Medium · 준비 우선순위</strong><br>fine-tuning 회귀의 기초 개념으로 심화 질문 대비.</p><p>Fine-tuning specialized data can damage general capabilities.</p>
+<p>Mitigation:</p>
+<ul>
+<li>mixed-domain training</li>
+<li>regularization</li>
+<li>smaller learning rate</li>
+<li>parameter-efficient fine-tuning</li>
+<li>regression evaluation</li>
+</ul>
+<a class="permalink" href="#q24"># Q24 바로가기</a></div></details><details class="question importance-high" data-importance="High" data-category="1" id="q25" ><summary><span class="q-number">25</span><span class="question-title">Multilingual customer support: one model or many?</span><span class="importance-tag high">High</span><span class="chevron" aria-hidden="true">+</span></summary><div class="answer"><p class="importance-reason"><strong>High · 준비 우선순위</strong><br>글로벌 CS에서 언어별 품질 격차와 fallback 설계가 중요.</p><h3>Answer</h3>
+<p>Don&#39;t start with ideology.</p>
+<p>Evaluate:</p>
+<ul>
+<li>language volume</li>
+<li>data availability</li>
+<li>quality gap</li>
+<li>latency</li>
+<li>cultural/policy differences</li>
+</ul>
+<p>Likely design:</p>
+<pre><code class="language-text">shared multilingual backbone
++
+language-specific evaluation
++
+routing/fallback where needed
+</code></pre>
+<p>Important:</p>
+<blockquote>
+<p>“Aggregate quality can hide catastrophic performance in lower-volume languages.”</p>
+</blockquote>
+<a class="permalink" href="#q25"># Q25 바로가기</a></div></details></section><section class="part" id="part-2"><header class="part-heading"><span class="part-number">03</span><div><p class="eyebrow">설계 · 안전성 · 운영</p><h2>ML / LLM System Design</h2><p class="framework">Requirements → Metrics → Data → Model → Architecture</p></div><span class="count">10</span></header><details class="question importance-critical" data-importance="Critical" data-category="2" id="q26" ><summary><span class="q-number">26</span><span class="question-title">Design Airbnb AI Customer Support</span><span class="importance-tag critical">Critical</span><span class="chevron" aria-hidden="true">+</span></summary><div class="answer"><p class="importance-reason"><strong>Critical · 준비 우선순위</strong><br>이 포지션의 핵심 도메인을 end-to-end 아키텍처로 통합.</p><h3>First ask</h3>
+<ul>
+<li>guests only or hosts too?</li>
+<li>information only or actions?</li>
+<li>text or voice?</li>
+<li>languages?</li>
+<li>latency requirement?</li>
+<li>human escalation?</li>
+</ul>
+<h3>Architecture</h3>
+<pre><code class="language-text">User
+ ↓
+Conversation Layer
+ ↓
+Intent + Risk Classifier
+ ↓
+Context Builder
+ ├── Reservation/account
+ ├── Policy RAG
+ └── Conversation history
+ ↓
+LLM/Agent
+ ↓
+Tool Router
+ ├── Booking
+ ├── Refund
+ ├── Payment
+ └── Rebooking
+ ↓
+Guardrails
+ ↓
+Confidence/Risk
+ ├── Response
+ └── Human Escalation
+</code></pre>
+<h3>Metrics</h3>
+<ul>
+<li>successful resolution</li>
+<li>escalation</li>
+<li>re-contact</li>
+<li>CSAT</li>
+<li>correctness</li>
+<li>action safety</li>
+<li>latency</li>
+<li>cost</li>
+</ul>
+<a class="permalink" href="#q26"># Q26 바로가기</a></div></details><details class="question importance-critical" data-importance="Critical" data-category="2" id="q27" ><summary><span class="q-number">27</span><span class="question-title">Design Airbnb RAG</span><span class="importance-tag critical">Critical</span><span class="chevron" aria-hidden="true">+</span></summary><div class="answer"><p class="importance-reason"><strong>Critical · 준비 우선순위</strong><br>정책 버전·권한·retrieval 평가를 포함한 실전 CS RAG 설계.</p><h3>Architecture</h3>
+<pre><code class="language-text">Documents
+ ↓
+Parsing
+ ↓
+Chunking
+ ↓
+Metadata
+ ↓
+Embedding
+ ↓
+Vector index
+</code></pre>
+<p>Query:</p>
+<pre><code class="language-text">Query
+ ↓
+Query understanding
+ ↓
+Hybrid retrieval
+ ↓
+Reranking
+ ↓
+Context construction
+ ↓
+LLM
+</code></pre>
+<h3>Must discuss</h3>
+<ul>
+<li>versioned policies</li>
+<li>country/jurisdiction</li>
+<li>host/guest context</li>
+<li>stale documents</li>
+<li>access control</li>
+<li>evaluation</li>
+</ul>
+<a class="permalink" href="#q27"># Q27 바로가기</a></div></details><details class="question importance-critical" data-importance="Critical" data-category="2" id="q28" ><summary><span class="q-number">28</span><span class="question-title">Design an Autonomous Refund Agent</span><span class="importance-tag critical">Critical</span><span class="chevron" aria-hidden="true">+</span></summary><div class="answer"><p class="importance-reason"><strong>Critical · 준비 우선순위</strong><br>환불 agent의 실행 권한·멱등성·human escalation 판단 확인.</p><p>가장 중요한 건 모델이 아니다.</p>
+<h3>Begin with risk classification.</h3>
+<pre><code class="language-text">Low-risk
+→ autonomous
+
+Medium-risk
+→ constrained actions
+
+High-risk
+→ human approval
+</code></pre>
+<p>Tool calls must be:</p>
+<ul>
+<li>authenticated</li>
+<li>authorized</li>
+<li>validated</li>
+<li>idempotent</li>
+<li>logged</li>
+<li>reversible where possible</li>
+</ul>
+<h3>Strong line</h3>
+<blockquote>
+<p>“I&#39;d separate language generation from authority to execute financial actions.”</p>
+</blockquote>
+<a class="permalink" href="#q28"># Q28 바로가기</a></div></details><details class="question importance-critical" data-importance="Critical" data-category="2" id="q29" ><summary><span class="q-number">29</span><span class="question-title">Design an LLM Evaluation Platform</span><span class="importance-tag critical">Critical</span><span class="chevron" aria-hidden="true">+</span></summary><div class="answer"><p class="importance-reason"><strong>Critical · 준비 우선순위</strong><br>평가 플랫폼 설계와 distributed eval 경험을 함께 입증.</p><h3>Components</h3>
+<pre><code class="language-text">Dataset registry
+ ↓
+Evaluation runner
+ ↓
+Multiple models/prompts
+ ↓
+Metric computation
+ ↓
+LLM judges
+ ↓
+Human review
+ ↓
+Dashboard
+ ↓
+Regression gates
+</code></pre>
+<p>Need:</p>
+<ul>
+<li>reproducibility</li>
+<li>versioning</li>
+<li>statistical significance</li>
+<li>slice analysis</li>
+<li>cost tracking</li>
+</ul>
+<h3 class="jay-label">Jay connection</h3>
+<p>본인의 distributed RL/evaluation orchestration 경험이 직접 연결된다.</p>
+<a class="permalink" href="#q29"># Q29 바로가기</a></div></details><details class="question importance-critical" data-importance="Critical" data-category="2" id="q30" ><summary><span class="q-number">30</span><span class="question-title">Design a Model Routing System</span><span class="importance-tag critical">Critical</span><span class="chevron" aria-hidden="true">+</span></summary><div class="answer"><p class="importance-reason"><strong>Critical · 준비 우선순위</strong><br>품질·비용·지연 제약 아래 모델 선택과 routing 전략 확인.</p><p>Goal:</p>
+<p>모든 요청에 expensive model 사용하지 않기.</p>
+<pre><code class="language-text">Request
+ ↓
+Complexity/Risk classifier
+ ↓
+Easy → SLM
+Medium → mid-tier model
+Hard → frontier model
+High-risk → human
+</code></pre>
+<p>Optimize:</p>
+<pre><code class="language-text">Quality subject to latency/cost constraints
+</code></pre>
+<p>Jay 경험과 매우 잘 맞는 problem.</p>
+<a class="permalink" href="#q30"># Q30 바로가기</a></div></details><details class="question importance-medium" data-importance="Medium" data-category="2" id="q31" ><summary><span class="q-number">31</span><span class="question-title">Design Airbnb Travel Planning Assistant</span><span class="importance-tag medium">Medium</span><span class="chevron" aria-hidden="true">+</span></summary><div class="answer"><p class="importance-reason"><strong>Medium · 준비 우선순위</strong><br>인접한 여행 도메인 설계이며 CS AI 핵심 대비 우선순위는 낮음.</p><p>Need state:</p>
+<ul>
+<li>destination</li>
+<li>dates</li>
+<li>guests</li>
+<li>preferences</li>
+<li>budget</li>
+<li>previous choices</li>
+</ul>
+<p>Architecture:</p>
+<ul>
+<li>conversational memory</li>
+<li>search/retrieval</li>
+<li>recommendation</li>
+<li>availability tools</li>
+<li>ranking</li>
+<li>LLM orchestration</li>
+</ul>
+<p>Important:</p>
+<p>LLM이 존재하지 않는 listing을 생성하면 안 된다.</p>
+<a class="permalink" href="#q31"># Q31 바로가기</a></div></details><details class="question importance-low" data-importance="Low" data-category="2" id="q32" ><summary><span class="q-number">32</span><span class="question-title">Design Personalized Recommendations</span><span class="importance-tag low">Low</span><span class="chevron" aria-hidden="true">+</span></summary><div class="answer"><p class="importance-reason"><strong>Low · 준비 우선순위</strong><br>일반 추천 시스템 설계로 CS AI/post-training 역할과는 간접적.</p><p>Discuss:</p>
+<p>Candidate generation</p>
+<p>→ ranking</p>
+<p>→ reranking</p>
+<p>Signals:</p>
+<ul>
+<li>clicks</li>
+<li>saves</li>
+<li>bookings</li>
+<li>geography</li>
+<li>price</li>
+<li>trip intent</li>
+<li>group composition</li>
+</ul>
+<p>Metrics:</p>
+<p>Offline:</p>
+<pre><code class="language-text">NDCG
+Recall
+AUC
+</code></pre>
+<p>Online:</p>
+<pre><code class="language-text">booking conversion
+engagement
+long-term satisfaction
+</code></pre>
+<a class="permalink" href="#q32"># Q32 바로가기</a></div></details><details class="question importance-critical" data-importance="Critical" data-category="2" id="q33" ><summary><span class="q-number">33</span><span class="question-title">Design a Feedback Learning Loop</span><span class="importance-tag critical">Critical</span><span class="chevron" aria-hidden="true">+</span></summary><div class="answer"><p class="importance-reason"><strong>Critical · 준비 우선순위</strong><br>운영 피드백을 안전한 SFT·선호 학습 개선으로 연결.</p><pre><code class="language-text">Production interactions
+ ↓
+Logging
+ ↓
+Outcome signals
+ ↓
+Human feedback
+ ↓
+Data filtering
+ ↓
+Training set
+ ↓
+SFT/preference optimization
+ ↓
+offline evaluation
+ ↓
+A/B
+ ↓
+production
+</code></pre>
+<h3>Danger</h3>
+<p>feedback loop contamination.</p>
+<p>Model output를 training data로 넣으면서 기존 bias를 amplify할 수 있다.</p>
+<a class="permalink" href="#q33"># Q33 바로가기</a></div></details><details class="question importance-critical" data-importance="Critical" data-category="2" id="q34" ><summary><span class="q-number">34</span><span class="question-title">Design AI Safety/Guardrails</span><span class="importance-tag critical">Critical</span><span class="chevron" aria-hidden="true">+</span></summary><div class="answer"><p class="importance-reason"><strong>Critical · 준비 우선순위</strong><br>CS agent의 안전한 tool use·권한·위험 기반 escalation 설계.</p><p>Defense in depth:</p>
+<pre><code class="language-text">Input moderation
+ ↓
+Prompt injection detection
+ ↓
+Trusted retrieval
+ ↓
+Tool authorization
+ ↓
+Generation
+ ↓
+Output validation
+ ↓
+Risk score
+ ↓
+Human escalation
+</code></pre>
+<p>Airbnb에서는 특히:</p>
+<ul>
+<li>money</li>
+<li>physical safety</li>
+<li>discriminatory content</li>
+<li>account security</li>
+<li>host/guest conflict</li>
+</ul>
+<p>같은 high-risk situations 고려.</p>
+<a class="permalink" href="#q34"># Q34 바로가기</a></div></details><details class="question importance-high" data-importance="High" data-category="2" id="q35" ><summary><span class="q-number">35</span><span class="question-title">Design a Global ML Serving Platform</span><span class="importance-tag high">High</span><span class="chevron" aria-hidden="true">+</span></summary><div class="answer"><p class="importance-reason"><strong>High · 준비 우선순위</strong><br>확장 가능한 배포·rollback·비용 판단으로 production 역량 확인.</p><p>Discuss:</p>
+<ul>
+<li>multi-region inference</li>
+<li>model registry</li>
+<li>canary deployments</li>
+<li>GPU scheduling</li>
+<li>autoscaling</li>
+<li>batching</li>
+<li>observability</li>
+<li>rollback</li>
+<li>feature/version compatibility</li>
+</ul>
+<h3>Follow-up</h3>
+<blockquote>
+<p>Model v2 quality is better but twice as expensive.</p>
+</blockquote>
+<p>Senior Staff answer:</p>
+<p>무조건 deploy하지 않는다.</p>
+<p>Incremental product value / cost / latency를 비교한다.</p>
+<a class="permalink" href="#q35"># Q35 바로가기</a></div></details></section><section class="part" id="part-3"><header class="part-heading"><span class="part-number">04</span><div><p class="eyebrow">판단 · 영향력 · 리더십</p><h2>Senior Staff / Technical Leadership</h2><p class="framework">Technical decision → Your role → Cross-team impact</p></div><span class="count">10</span></header><details class="question importance-critical" data-importance="Critical" data-category="3" id="q36" ><summary><span class="q-number">36</span><span class="question-title">Tell me about your most impactful project.</span><span class="importance-tag critical">Critical</span><span class="chevron" aria-hidden="true">+</span></summary><div class="answer"><p class="importance-reason"><strong>Critical · 준비 우선순위</strong><br>직접 기여·협업 범위·측정 가능한 CS AI 성과를 입증하는 대표 사례.</p><h3 class="jay-label">Best Jay story</h3>
+<p>Intuit Assist / customer-support AI.</p>
+<h3>Structure</h3>
+<blockquote>
+<p>“The business problem was…”</p>
+</blockquote>
+<p>→ Why existing solution was insufficient</p>
+<p>→ Technical decision</p>
+<p>→ Your role</p>
+<p>→ Other teams</p>
+<p>→ production</p>
+<p>→ measurable impact</p>
+<h3>Important</h3>
+<p>항상 <strong>I / We</strong>를 구분한다.</p>
+<a class="permalink" href="#q36"># Q36 바로가기</a></div></details><details class="question importance-critical" data-importance="Critical" data-category="3" id="q37" ><summary><span class="q-number">37</span><span class="question-title">What makes you Senior Staff rather than Staff?</span><span class="importance-tag critical">Critical</span><span class="chevron" aria-hidden="true">+</span></summary><div class="answer"><p class="importance-reason"><strong>Critical · 준비 우선순위</strong><br>여러 팀의 기술 방향을 이끄는 Senior Staff 수준의 범위 입증.</p><h3>Sample answer</h3>
+<blockquote>
+<p>“The biggest shift in my scope has been moving from owning individual models to owning technical direction across multiple initiatives. I still stay hands-on, but I increasingly define architecture, evaluation strategy, infrastructure capabilities and longer-term roadmap, and I help multiple teams make consistent technical decisions.”</p>
+</blockquote>
+<p>Resume도 roadmap, cross-functional leadership와 mentoring을 명확히 보여준다.</p>
+<a class="permalink" href="#q37"># Q37 바로가기</a></div></details><details class="question importance-high" data-importance="High" data-category="3" id="q38" ><summary><span class="q-number">38</span><span class="question-title">Tell me about a technical disagreement.</span><span class="importance-tag high">High</span><span class="chevron" aria-hidden="true">+</span></summary><div class="answer"><p class="importance-reason"><strong>High · 준비 우선순위</strong><br>기술적 이견을 근거·실험·공동 결정으로 해결하는 리더십 확인.</p><h3>Answer structure</h3>
+<p>Don&#39;t tell:</p>
+<blockquote>
+<p>“I was right and they were wrong.”</p>
+</blockquote>
+<p>Tell:</p>
+<ol>
+<li>disagreement</li>
+<li>why both perspectives were reasonable</li>
+<li>objective criteria</li>
+<li>experiment/data</li>
+<li>decision</li>
+<li>relationship preserved</li>
+</ol>
+<h3>Great line</h3>
+<blockquote>
+<p>“I try to turn architectural disagreements into testable hypotheses.”</p>
+</blockquote>
+<a class="permalink" href="#q38"># Q38 바로가기</a></div></details><details class="question importance-critical" data-importance="Critical" data-category="3" id="q39" ><summary><span class="q-number">39</span><span class="question-title">How do you influence teams you don&#39;t manage?</span><span class="importance-tag critical">Critical</span><span class="chevron" aria-hidden="true">+</span></summary><div class="answer"><p class="importance-reason"><strong>Critical · 준비 우선순위</strong><br>직접 관리하지 않는 팀까지 기술 방향·플랫폼 채택에 영향력 발휘.</p><h3>Answer</h3>
+<p>Three tools:</p>
+<pre><code class="language-text">Credibility
+Clarity
+Leverage
+</code></pre>
+<ul>
+<li>understand their incentive</li>
+<li>create data/evidence</li>
+<li>build prototype</li>
+<li>establish shared metrics</li>
+<li>provide paved path</li>
+</ul>
+<h3 class="jay-label">Jay connection</h3>
+<p><code>auto-sft</code> library is strong because other teams can benefit from your decision without direct management.</p>
+<a class="permalink" href="#q39"># Q39 바로가기</a></div></details><details class="question importance-critical" data-importance="Critical" data-category="3" id="q40" ><summary><span class="q-number">40</span><span class="question-title">How do you create a 3-year AI roadmap when models change every six months?</span><span class="importance-tag critical">Critical</span><span class="chevron" aria-hidden="true">+</span></summary><div class="answer"><p class="importance-reason"><strong>Critical · 준비 우선순위</strong><br>모델 변화 속에서도 지속 가능한 기술 로드맵을 정의하는 역량.</p><h3>Excellent answer</h3>
+<blockquote>
+<p>“I avoid roadmaps based on model names. I organize them around durable capabilities.”</p>
+</blockquote>
+<p>Example:</p>
+<p>Year 1:</p>
+<ul>
+<li>evaluation</li>
+<li>data foundation</li>
+<li>RAG</li>
+<li>observability</li>
+</ul>
+<p>Year 2:</p>
+<ul>
+<li>post-training</li>
+<li>model routing</li>
+<li>agent tooling</li>
+</ul>
+<p>Year 3:</p>
+<ul>
+<li>feedback learning</li>
+<li>controlled autonomy</li>
+<li>personalization</li>
+</ul>
+<p>Excellent Senior Staff signal.</p>
+<a class="permalink" href="#q40"># Q40 바로가기</a></div></details><details class="question importance-high" data-importance="High" data-category="3" id="q41" ><summary><span class="q-number">41</span><span class="question-title">Tell me about a project that failed.</span><span class="importance-tag high">High</span><span class="chevron" aria-hidden="true">+</span></summary><div class="answer"><p class="importance-reason"><strong>High · 준비 우선순위</strong><br>실패의 책임·수정·조직 학습을 구체적인 사례로 설명.</p><h3>Rule</h3>
+<p>가짜 실패:</p>
+<blockquote>
+<p>“We succeeded but were slightly late.”</p>
+</blockquote>
+<p>하지 말 것.</p>
+<p>Real failure를 이야기한다.</p>
+<p>그리고:</p>
+<ul>
+<li>assumption</li>
+<li>signal you missed</li>
+<li>correction</li>
+<li>organizational learning</li>
+</ul>
+<h3>Airbnb values도 reflection을 중요하게 볼 가능성이 높음.</h3>
+<a class="permalink" href="#q41"># Q41 바로가기</a></div></details><details class="question importance-high" data-importance="High" data-category="3" id="q42" ><summary><span class="q-number">42</span><span class="question-title">Tell me about a project you stopped.</span><span class="importance-tag high">High</span><span class="chevron" aria-hidden="true">+</span></summary><div class="answer"><p class="importance-reason"><strong>High · 준비 우선순위</strong><br>투자를 중단하는 판단과 기회비용을 다루는 리더십 확인.</p><h3>Senior Staff quality</h3>
+<p>좋은 technical leader는 시작만 하는 사람이 아니다.</p>
+<blockquote>
+<p>“We realized expected incremental quality wasn&#39;t sufficient to justify the latency and infrastructure cost.”</p>
+</blockquote>
+<p>같은 decision.</p>
+<p>Jay의 lightweight model work와 연결하기 좋다.</p>
+<a class="permalink" href="#q42"># Q42 바로가기</a></div></details><details class="question importance-high" data-importance="High" data-category="3" id="q43" ><summary><span class="q-number">43</span><span class="question-title">How do you decide build vs buy?</span><span class="importance-tag high">High</span><span class="chevron" aria-hidden="true">+</span></summary><div class="answer"><p class="importance-reason"><strong>High · 준비 우선순위</strong><br>기술 전략·차별화·운영 부담을 함께 평가하는 의사결정.</p><p>Evaluate:</p>
+<pre><code class="language-text">Strategic differentiation
+Quality
+Time-to-market
+Cost
+Control
+Data/privacy
+Operational burden
+Vendor dependence
+</code></pre>
+<h3>Great line</h3>
+<blockquote>
+<p>“I prefer to build where the capability creates durable differentiation, not simply because we know how to build it.”</p>
+</blockquote>
+<a class="permalink" href="#q43"># Q43 바로가기</a></div></details><details class="question importance-high" data-importance="High" data-category="3" id="q44" ><summary><span class="q-number">44</span><span class="question-title">How do you mentor senior engineers/scientists?</span><span class="importance-tag high">High</span><span class="chevron" aria-hidden="true">+</span></summary><div class="answer"><p class="importance-reason"><strong>High · 준비 우선순위</strong><br>다른 senior 인재의 판단력과 조직 전체 실행력을 높이는 사례.</p><p>Senior people에게 task를 주는 게 mentorship는 아니다.</p>
+<p>Discuss:</p>
+<ul>
+<li>decision framing</li>
+<li>broader scope</li>
+<li>visibility</li>
+<li>challenging assumptions</li>
+<li>letting them own decisions</li>
+<li>sponsorship</li>
+</ul>
+<a class="permalink" href="#q44"># Q44 바로가기</a></div></details><details class="question importance-high" data-importance="High" data-category="3" id="q45" ><summary><span class="q-number">45</span><span class="question-title">How do you handle ambiguity?</span><span class="importance-tag high">High</span><span class="chevron" aria-hidden="true">+</span></summary><div class="answer"><p class="importance-reason"><strong>High · 준비 우선순위</strong><br>모호한 목표를 지표·실험·결정으로 바꾸는 Staff+ 실행 역량.</p><h3>Sample answer</h3>
+<blockquote>
+<p>“At Staff-plus level, ambiguity is usually part of the job rather than something I wait for someone else to resolve.”</p>
+</blockquote>
+<p>Then:</p>
+<ol>
+<li>identify decision</li>
+<li>establish success metric</li>
+<li>bound unknowns</li>
+<li>prototype</li>
+<li>reduce uncertainty</li>
+<li>commit</li>
+</ol>
+<a class="permalink" href="#q45"># Q45 바로가기</a></div></details></section><section class="part" id="part-4"><header class="part-heading"><span class="part-number">05</span><div><p class="eyebrow">가치관 · 성찰 · 협업</p><h2>Airbnb Core Values / Culture</h2><p class="framework">STAR + Learning · 무엇을 바꾸었는가?</p></div><span class="count">5</span></header><details class="question importance-high" data-importance="High" data-category="4" id="q46" ><summary><span class="q-number">46</span><span class="question-title">Tell me about a time something important didn&#39;t go as planned.</span><span class="importance-tag high">High</span><span class="chevron" aria-hidden="true">+</span></summary><div class="answer"><p class="importance-reason"><strong>High · 준비 우선순위</strong><br>행동 면접에서 회고와 개선을 구체적으로 입증할 사례.</p><p>Airbnb-style answer:</p>
+<p>STAR + Learning.</p>
+<h3>Strong ending</h3>
+<blockquote>
+<p>“The biggest change I made afterward was…”</p>
+</blockquote>
+<p>Reflection이 중요하다.</p>
+<a class="permalink" href="#q46"># Q46 바로가기</a></div></details><details class="question importance-high" data-importance="High" data-category="4" id="q47" ><summary><span class="q-number">47</span><span class="question-title">Tell me about a time you helped someone succeed.</span><span class="importance-tag high">High</span><span class="chevron" aria-hidden="true">+</span></summary><div class="answer"><p class="importance-reason"><strong>High · 준비 우선순위</strong><br>동료의 성공·ownership·credit 공유에 관한 문화 적합성 사례.</p><h3>Be a Host</h3>
+<p>좋은 사례:</p>
+<ul>
+<li>junior scientist mentorship</li>
+<li>engineer에게 ownership 넘김</li>
+<li>다른 팀 unblock</li>
+<li>credit 공유</li>
+</ul>
+<p>Avoid:</p>
+<blockquote>
+<p>“I told them exactly how to do it.”</p>
+</blockquote>
+<a class="permalink" href="#q47"># Q47 바로가기</a></div></details><details class="question importance-high" data-importance="High" data-category="4" id="q48" ><summary><span class="q-number">48</span><span class="question-title">Tell me about a time you solved a problem creatively with limited resources.</span><span class="importance-tag high">High</span><span class="chevron" aria-hidden="true">+</span></summary><div class="answer"><p class="importance-reason"><strong>High · 준비 우선순위</strong><br>24-wave 경험으로 창의성·자원 제약·기술 성과를 함께 설명.</p><h3>Be a Cereal Entrepreneur</h3>
+<p>Jay에게는 <strong>24-wave lightweight architecture story</strong>가 매우 좋다.</p>
+<p>Story:</p>
+<p>expensive multimodal frontier model</p>
+<p>→ assumption challenge</p>
+<p>→ systematic exploration</p>
+<p>→ lightweight architecture</p>
+<p>→ ~1,000× fewer parameters</p>
+<p>→ production target 달성.</p>
+<a class="permalink" href="#q48"># Q48 바로가기</a></div></details><details class="question importance-medium" data-importance="Medium" data-category="4" id="q49" ><summary><span class="q-number">49</span><span class="question-title">Tell me about a major change you had to embrace.</span><span class="importance-tag medium">Medium</span><span class="chevron" aria-hidden="true">+</span></summary><div class="answer"><p class="importance-reason"><strong>Medium · 준비 우선순위</strong><br>변화 수용 사례를 준비하되 다른 핵심 경험과 재활용 가능.</p><h3>Embrace the Adventure</h3>
+<p>Possible story:</p>
+<p>traditional NLP/ML</p>
+<p>→ GenAI</p>
+<p>→ LLM fine-tuning/RL</p>
+<p>→ agent systems</p>
+<p>단순히 새 기술을 배웠다는 게 아니라:</p>
+<blockquote>
+<p>어떻게 기존 production ML principles를 새로운 GenAI 환경에 적용했는지</p>
+</blockquote>
+<p>를 이야기한다.</p>
+<a class="permalink" href="#q49"># Q49 바로가기</a></div></details><details class="question importance-high" data-importance="High" data-category="4" id="q50" ><summary><span class="q-number">50</span><span class="question-title">Why Airbnb?</span><span class="importance-tag high">High</span><span class="chevron" aria-hidden="true">+</span></summary><div class="answer"><p class="importance-reason"><strong>High · 준비 우선순위</strong><br>CS AI 문제·역할 범위·본인 경험을 연결하는 지원 동기 확인.</p><h3>90-second answer</h3>
+<p><strong>편집 메모:</strong> 50문항 답변의 마지막 부분이 조회 한도로 잘려, 같은 대화의 앞선 “Why Airbnb?” 답변을 아래에 보존했습니다. 50번의 원래 답변과 동일한 문구라고 보장하지 않습니다.</p>
+<p>좋은 답변 구조는:</p>
+<p><strong>product → technical opportunity → personal fit</strong></p>
+<p>입니다.</p>
+<blockquote>
+<p>“There are really three things that attracted me.</p>
+<p>First, Airbnb has a uniquely interesting AI problem because customer support involves complex, long-tail, real-world situations involving guests, hosts, policies and transactions.</p>
+<p>Second, I was excited to see how aggressively Airbnb is already deploying AI in customer support. This isn&#39;t just experimentation — it&#39;s already operating at global scale and producing measurable improvements in resolution and efficiency.</p>
+<p>And third, the technical scope of this role overlaps unusually well with what I&#39;ve been doing — post-training, RAG, evaluation, model optimization, real-time inference and customer-support AI.</p>
+<p>So for me it feels like an opportunity where I could contribute immediately while also working on a much broader global consumer AI problem.”</p>
+</blockquote>
+<a class="permalink" href="#q50"># Q50 바로가기</a></div></details></section></div><section class="review" id="quick-review"><p class="eyebrow">Quick review</p><h2>답변의 뼈대를 먼저 기억하세요.</h2><p class="subtitle">원 대화의 앞선 면접 가이드에서 모은 복습 프레임워크.</p><div class="review-grid"><article class="review-card wide"><h3>System design · R → M → D → M → A → T → E → S → O</h3><p class="sequence">Requirements → Metrics → Data → Model → Architecture → Training → Evaluation → Serving → Observability → Roadmap</p><p>RAG assistant → fine-tuned domain model → constrained actions → low-risk autonomy → feedback-driven improvement.</p></article><article class="review-card"><h3>Project deep dive</h3><p class="sequence">Customer impact → Technical decision → Scale → Result</p><p>Why existing solution was insufficient → Your role → Other teams → Production → Measurable impact. <strong>I / We를 구분하세요.</strong></p></article><article class="review-card"><h3>Model choice</h3><p class="sequence">Quality · Latency · Cost · Reliability</p><p>Knowledge problem → RAG<br>Behavior problem → Fine-tuning<br>Evolving task → Prompting</p></article><article class="review-card"><h3>Behavioral / Culture</h3><p class="sequence">Situation → Task → Action → Result + Learning</p><p>“The biggest change I made afterward was…”<br>가짜 실패보다 놓친 신호, 수정, 조직의 학습을 말하세요.</p></article><article class="review-card"><h3>Why Airbnb?</h3><p class="sequence">Product → Technical opportunity → Personal fit</p><p>복잡한 guest/host support 문제 → post-training·evaluation·efficiency → Intuit CS AI 경험 연결.</p></article></div></section><section class="review" id="jay-stories"><p class="eyebrow">Jay’s story bank</p><h2>숫자보다, 그 결정을 내린 이유.</h2><div class="story"><strong>01 / Intuit Assist</strong><p>Customer Support GenAI · routing · summarization · RAG · cross-functional leadership.<br><a href="#q26">Q26</a> · <a href="#q36">Q36</a> · <a href="#q50">Q50</a></p></div><div class="story"><strong>02 / SLM replacement</strong><p>Fine-tuning → 약 <b>8× latency reduction / 97%+ reliability</b>. Confidence model: <b>0.80 Pearson / 0.88 AUROC vs LLM judge</b>.<br><a href="#q11">Q11</a> · <a href="#q12">Q12</a> · <a href="#q21">Q21</a> · <a href="#q30">Q30</a></p></div><div class="story"><strong>03 / 24-wave study</strong><p>Lightweight audio/text architecture → production target <b>macro F1 .746</b>, 약 <b>1,000× fewer parameters</b>. 기존 architecture 가정을 실험으로 검증한 이야기.<br><a href="#q19">Q19</a> · <a href="#q42">Q42</a> · <a href="#q48">Q48</a></p></div><div class="story"><strong>04 / auto-SFT & RL</strong><p>SageMaker / Kubernetes · distributed RL/evaluation orchestration · reusable training infrastructure. 직접 관리하지 않는 팀에도 확장되는 영향력.<br><a href="#q29">Q29</a> · <a href="#q35">Q35</a> · <a href="#q39">Q39</a></p></div><div class="story"><strong>05 / Senior Staff scope</strong><p>Architecture + roadmap + cross-functional influence + mentoring + hands-on ownership.<br><a href="#q37">Q37</a> · <a href="#q40">Q40</a> · <a href="#q44">Q44</a></p></div><p class="note">수치는 원 대화가 resume에서 인용한 값이며 이 문서에서 별도로 검증하지 않았습니다. 실제 답변에서는 baseline, 측정 조건, reliability 정의, 본인 기여 범위를 설명하세요. Story 연결은 준비용 제안이지 새로운 경력 사실이 아닙니다.</p></section><section class="review" id="source-note"><p class="eyebrow">Source & editorial notes</p><h2>원문 보존 범위</h2><p>출처: “에어비앤비 면접 가이드” ChatGPT 대화의 50 Questions & Answer Guide 및 앞선 면접 준비 답변. Q1–49의 질문·답변 가이드를 보존했고, Q50은 조회 길이 제한으로 잘린 원문 대신 같은 대화의 앞선 “Why Airbnb?” 답변을 사용했습니다. 조회되지 않은 후반부에 추가 내용이 있었는지는 확인할 수 없습니다.</p><p>빠른 복습 프레임워크와 Jay story bank는 조회 가능한 앞선 대화에서 재구성했습니다. 원문의 내부 파일 인용 표시는 읽을 수 있는 출처 메모로 대체했습니다. 이 자료는 <strong>예상 질문 연습용이며 Airbnb 공식 면접 문제나 확정 절차가 아닙니다.</strong></p><details><summary>기술 해석 시 주의할 원문의 축약 표현</summary><ul><li>Q1: deque 방식은 timestamp 순서 및 window 기준을 먼저 정해야 합니다. 전체 고객 조회는 별도 비용이 생길 수 있습니다.</li><li>Q2: “exact search 불가능”은 절대적 불가능이 아니라 큰 규모에서 latency·비용 제약상 비실용적일 수 있다는 뜻으로 읽으세요.</li><li>Q6: token/leaky bucket은 엄격한 rolling 60-second count와 동일한 의미가 아닙니다. 요구되는 burst semantics를 확인하세요.</li><li>Q8: Bloom filter는 false positive가 있으므로 정확한 중복 판별에는 후속 검증이 필요합니다.</li><li>Q21: LLM judge와의 일치도는 사람 기준의 정확성을 보장하지 않습니다.</li></ul></details></section><footer>Personal study edition · 11 September 2026 · 외부 폰트, 스크립트, 네트워크 연결 없이 사용 가능합니다.</footer></main><script>/**
+ * marked v18.0.12 - a markdown parser
+ * Copyright (c) 2018-2026, MarkedJS. (MIT License)
+ * Copyright (c) 2011-2018, Christopher Jeffrey. (MIT License)
+ * https://github.com/markedjs/marked
+ */
+
+/**
+ * DO NOT EDIT THIS FILE
+ * The code in this file is generated from files in ./src/
+ */
+(function(g,f){if(typeof exports=="object"&&typeof module<"u"){module.exports=f()}else if("function"==typeof define && define.amd){define("marked",f)}else {g["marked"]=f()}}(typeof globalThis < "u" ? globalThis : typeof self < "u" ? self : this,function(){var exports={};var __exports=exports;var module={exports};
+"use strict";var j=Object.defineProperty;var we=Object.getOwnPropertyDescriptor;var ye=Object.getOwnPropertyNames;var Pe=Object.prototype.hasOwnProperty;var Se=(l,e)=>{for(var t in e)j(l,t,{get:e[t],enumerable:!0})},_e=(l,e,t,n)=>{if(e&&typeof e=="object"||typeof e=="function")for(let s of ye(e))!Pe.call(l,s)&&s!==t&&j(l,s,{get:()=>e[s],enumerable:!(n=we(e,s))||n.enumerable});return l};var $e=l=>_e(j({},"__esModule",{value:!0}),l);var zt={};Se(zt,{Hooks:()=>P,Lexer:()=>x,Marked:()=>D,Parser:()=>b,Renderer:()=>y,TextRenderer:()=>_,Tokenizer:()=>w,defaults:()=>R,getDefaults:()=>E,lexer:()=>Lt,marked:()=>g,options:()=>wt,parse:()=>_t,parseInline:()=>St,parser:()=>$t,setOptions:()=>yt,use:()=>Re,walkTokens:()=>Pt});module.exports=$e(zt);function E(){return{async:!1,breaks:!1,extensions:null,gfm:!0,hooks:null,pedantic:!1,renderer:null,silent:!1,tokenizer:null,walkTokens:null}}var R=E();function F(l){R=l}var M={exec:()=>null};function I(l){let e=[];return t=>{let n=Math.max(0,Math.min(3,t-1)),s=e[n];return s||(s=l(n),e[n]=s),s}}function k(l,e=""){let t=typeof l=="string"?l:l.source,n={replace:(s,r)=>{let o=typeof r=="string"?r:r.source;return o=o.replace(m.caret,"$1"),t=t.replace(s,o),n},getRegex:()=>new RegExp(t,e)};return n}var Le=((l="")=>{try{return!!new RegExp("(?<=1)(?<!1)"+l)}catch{return!1}})(),m={codeRemoveIndent:/^(?: {1,4}| {0,3}\t)/gm,outputLinkReplace:/\\([\[\]])/g,indentCodeCompensation:/^(\s+)(?:```)/,beginningSpace:/^\s+/,endingHash:/#$/,startingSpaceChar:/^ /,endingSpaceChar:/ $/,endingSpaceTabChar:/[ \t]$/,nonSpaceChar:/[^ ]/,newLineCharGlobal:/\n/g,tabCharGlobal:/\t/g,multipleSpaceGlobal:/\s+/g,blankLine:/^[ \t]*$/,doubleBlankLine:/\n[ \t]*\n[ \t]*$/,blockquoteStart:/^ {0,3}>/,blockquoteSetextReplace:/\n {0,3}((?:=+|-+) *)(?=\n|$)/g,blockquoteSetextReplace2:/^ {0,3}>[ \t]?/gm,listReplaceNesting:/^ {1,4}(?=( {4})*[^ ])/g,listIsTask:/^\[[ xX]\] +\S/,listReplaceTask:/^\[[ xX]\] +/,listTaskCheckbox:/\[[ xX]\]/,anyLine:/\n.*\n/,hrefBrackets:/^<(.*)>$/,tableDelimiter:/[:|]/,tableAlignChars:/^\||\| *$/g,tableRowBlankLine:/\n[ \t]*$/,tableAlignRight:/^ *-+: *$/,tableAlignCenter:/^ *:-+: *$/,tableAlignLeft:/^ *:-+ *$/,startATag:/^<a /i,endATag:/^<\/a>/i,startPreScriptTag:/^<(pre|code|kbd|script)(\s|>)/i,endPreScriptTag:/^<\/(pre|code|kbd|script)(\s|>)/i,startAngleBracket:/^</,endAngleBracket:/>$/,pedanticHrefTitle:/^([^'"]*[^\s])\s+(['"])(.*)\2/,unicodeAlphaNumeric:/[\p{L}\p{N}]/u,escapeTest:/[&<>"']/,escapeReplace:/[&<>"']/g,escapeTestNoEncode:/[<>"']|&(?!(#\d{1,7}|#[Xx][a-fA-F0-9]{1,6}|\w+);)/,escapeReplaceNoEncode:/[<>"']|&(?!(#\d{1,7}|#[Xx][a-fA-F0-9]{1,6}|\w+);)/g,caret:/(^|[^\[])\^/g,percentDecode:/%25/g,findPipe:/\|/g,splitPipe:/ \|/,slashPipe:/\\\|/g,carriageReturn:/\r\n|\r/g,spaceLine:/^ +$/gm,notSpaceStart:/^\S*/,endingNewline:/\n$/,listItemRegex:l=>new RegExp(`^( {0,3}${l})((?:[	 ][^\\n]*)?(?:\\n|$))`),nextBulletRegex:I(l=>new RegExp(`^ {0,${l}}(?:[*+-]|\\d{1,9}[.)])((?:[ 	][^\\n]*)?(?:\\n|$))`)),hrRegex:I(l=>new RegExp(`^ {0,${l}}((?:- *){3,}|(?:_ *){3,}|(?:\\* *){3,})(?:\\n+|$)`)),fencesBeginRegex:I(l=>new RegExp(`^ {0,${l}}(?:\`\`\`|~~~)`)),headingBeginRegex:I(l=>new RegExp(`^ {0,${l}}#`)),htmlBeginRegex:I(l=>new RegExp(`^ {0,${l}}<(?:[a-z].*>|!--)`,"i")),blockquoteBeginRegex:I(l=>new RegExp(`^ {0,${l}}>`))},ze=/^(?:[ \t]*(?:\n|$))+/,Ee=/^((?: {4}| {0,3}\t)[^\n]+(?:\n(?:[ \t]*(?:\n|$))*)?)+/,Me=/^ {0,3}(`{3,}(?=[^`\n]*(?:\n|$))|~{3,})([^\n]*)(?:\n|$)(?:|([\s\S]*?)(?:\n|$))(?: {0,3}\1[~`]* *(?=\n|$)|$)/,v=/^ {0,3}((?:-[\t ]*){3,}|(?:_[ \t]*){3,}|(?:\*[ \t]*){3,})(?:\n+|$)/,Ae=/^ {0,3}(#{1,6})(?=\s|$)(.*)(?:\n+|$)/,K=/ {0,3}(?:[*+-]|\d{1,9}[.)])/,ae=/^(?!bull |blockCode|fences|blockquote|heading|html|table)((?:.|\n(?!\s*?\n|bull |blockCode|fences|blockquote|heading|html|table))+?)\n {0,3}(=+|-+) *(?:\n+|$)/,le=k(ae).replace(/bull/g,K).replace(/blockCode/g,/(?: {4}| {0,3}\t)/).replace(/fences/g,/ {0,3}(?:`{3,}|~{3,})/).replace(/blockquote/g,/ {0,3}>/).replace(/heading/g,/ {0,3}#{1,6}(?:\s|$)/).replace(/html/g,/ {0,3}<[^\n>]+>\n/).replace(/\|table/g,"").getRegex(),Ie=k(ae).replace(/bull/g,K).replace(/blockCode/g,/(?: {4}| {0,3}\t)/).replace(/fences/g,/ {0,3}(?:`{3,}|~{3,})/).replace(/blockquote/g,/ {0,3}>/).replace(/heading/g,/ {0,3}#{1,6}(?:\s|$)/).replace(/html/g,/ {0,3}<[^\n>]+>\n/).replace(/table/g,/ {0,3}\|?(?:[:\- ]*\|)+[\:\- ]*\n/).getRegex(),W=/^([^\n]+(?:\n(?!hr|heading|lheading|blockquote|fences|list|html|table|[ \t]+\n)[^\n]+)*)/,Ce=/^[^\n]+/,X=/(?!\s*\])(?:\\[\s\S]|[^\[\]\\])+/,Be=k(/^ {0,3}\[(label)\]: *(?:\n[ \t]*)?([^<\s][^\s]*|<.*?>)(?:(?: +(?:\n[ \t]*)?| *\n[ \t]*)(title))? *(?:\n+|$)/).replace("label",X).replace("title",/(?:"(?:\\"?|[^"\\])*"|'[^'\n]*(?:\n[^'\n]+)*\n?'|\([^()]*\))/).getRegex(),De=k(/^(bull)([ \t][^\n]*?)?(?:\n|$)/).replace(/bull/g,K).getRegex(),Q="address|article|aside|base|basefont|blockquote|body|caption|center|col|colgroup|dd|details|dialog|dir|div|dl|dt|fieldset|figcaption|figure|footer|form|frame|frameset|h[1-6]|head|header|hr|html|iframe|legend|li|link|main|menu|menuitem|meta|nav|noframes|ol|optgroup|option|p|param|search|section|summary|table|tbody|td|tfoot|th|thead|title|tr|track|ul",J=/<!--(?:-?>|[\s\S]*?(?:-->|$))/,qe=k("^ {0,3}(?:<(script|pre|style|textarea)[\\s>][\\s\\S]*?(?:</\\1>[^\\n]*\\n*|$)|comment[^\\n]*(\\n+|$)|<\\?[\\s\\S]*?(?:\\?>[^\\n]*\\n*|$)|<![A-Z][\\s\\S]*?(?:>[^\\n]*\\n*|$)|<!\\[CDATA\\[[\\s\\S]*?(?:\\]\\]>[^\\n]*\\n*|$)|</?(tag)(?: +|\\n|/?>)[\\s\\S]*?(?:(?:\\n[ 	]*)+\\n|$)|<(?!script|pre|style|textarea)([a-z][a-z0-9-]*)(?:attribute)*? */?>(?=[ \\t]*(?:\\n|$))[\\s\\S]*?(?:(?:\\n[ 	]*)+\\n|$)|</(?!script|pre|style|textarea)[a-z][a-z0-9-]*\\s*>(?=[ \\t]*(?:\\n|$))[\\s\\S]*?(?:(?:\\n[ 	]*)+\\n|$))","i").replace("comment",J).replace("tag",Q).replace("attribute",/ +[a-zA-Z:_][\w.:-]*(?: *= *"[^"\n]*"| *= *'[^'\n]*'| *= *[^\s"'=<>`]+)?/).getRegex(),ue=l=>k(W).replace("hr",v).replace("heading"," {0,3}#{1,6}(?:\\s|$)").replace("|lheading","").replace("|table","").replace("blockquote"," {0,3}>").replace("fences"," {0,3}(?:`{3,}(?=[^`\\n]*(?:\\n|$))|~~~)[^\\n]*(?:\\n|$)").replace("list",l).replace("html","</?(?:tag)(?: +|\\n|/?>)|<(?:script|pre|style|textarea|!--)").replace("tag",Q).getRegex(),ve=ue(/ {0,3}(?:[*+-]|1[.)])[ \t]+[^ \t\n]/),He=ue(/ {0,3}(?:[*+-]|\d{1,9}[.)])(?:[ \t]|\n|$)/),Ze=k(/^( {0,3}> ?(paragraph|[^\n]*)(?:\n|$))+/).replace("paragraph",He).getRegex(),V={blockquote:Ze,code:Ee,def:Be,fences:Me,heading:Ae,hr:v,html:qe,lheading:le,list:De,newline:ze,paragraph:ve,table:M,text:Ce},ie=k("^ *([^\\n ].*)\\n {0,3}((?:\\| *)?:?-+:? *(?:\\| *:?-+:? *)*(?:\\| *)?)(?:\\n((?:(?! *\\n|hr|heading|blockquote|code|fences|list|html).*(?:\\n|$))*)\\n*|$)").replace("hr",v).replace("heading"," {0,3}#{1,6}(?:\\s|$)").replace("blockquote"," {0,3}>").replace("code","(?: {4}| {0,3}	)[^\\n]").replace("fences"," {0,3}(?:`{3,}(?=[^`\\n]*(?:\\n|$))|~~~)[^\\n]*(?:\\n|$)").replace("list"," {0,3}(?:[*+-]|1[.)])[ \\t]").replace("html","</?(?:tag)(?: +|\\n|/?>)|<(?:script|pre|style|textarea|!--)").replace("tag",Q).getRegex(),Ge={...V,lheading:Ie,table:ie,paragraph:k(W).replace("hr",v).replace("heading"," {0,3}#{1,6}(?:\\s|$)").replace("|lheading","").replace("table",ie).replace("blockquote"," {0,3}>").replace("fences"," {0,3}(?:`{3,}(?=[^`\\n]*(?:\\n|$))|~~~)[^\\n]*(?:\\n|$)").replace("list"," {0,3}(?:[*+-]|1[.)])[ \\t]+[^ \\t\\n]").replace("html","</?(?:tag)(?: +|\\n|/?>)|<(?:script|pre|style|textarea|!--)").replace("tag",Q).getRegex()},Qe={...V,html:k(`^ *(?:comment *(?:\\n|\\s*$)|<(tag)[\\s\\S]+?</\\1> *(?:\\n{2,}|\\s*$)|<tag(?:"[^"]*"|'[^']*'|\\s[^'"/>\\s]*)*?/?> *(?:\\n{2,}|\\s*$))`).replace("comment",J).replace(/tag/g,"(?!(?:a|em|strong|small|s|cite|q|dfn|abbr|data|time|code|var|samp|kbd|sub|sup|i|b|u|mark|ruby|rt|rp|bdi|bdo|span|br|wbr|ins|del|img)\\b)\\w+(?!:|[^\\w\\s@]*@)\\b").getRegex(),def:/^ *\[([^\]]+)\]: *<?([^\s>]+)>?(?: +(["(][^\n]+[")]))? *(?:\n+|$)/,heading:/^(#{1,6})(.*)(?:\n+|$)/,fences:M,lheading:/^(.+?)\n {0,3}(=+|-+) *(?:\n+|$)/,paragraph:k(W).replace("hr",v).replace("heading",` *#{1,6} *[^
+]`).replace("lheading",le).replace("|table","").replace("blockquote"," {0,3}>").replace("|fences","").replace("|list","").replace("|html","").replace("|tag","").getRegex()},Ne=/^\\([!"#$%&'()*+,\-./:;<=>?@\[\]\\^_`{|}~])/,je=/^(`+)([^`]|[^`][\s\S]*?[^`])\1(?!`)/,pe=/^( {2,}|\\)\n(?!\s*$)/,Fe=/^(`+|[^`])(?:(?= {2,}\n)|[\s\S]*?(?:(?=[\\<!\[`*_]|\b_|$)|[^ ](?= {2,}\n)))/,$=/[\p{P}\p{S}]/u,C=/[\s\p{P}\p{S}]/u,H=/[^\s\p{P}\p{S}]/u,Ue=k(/^((?![*_])punctSpace)/,"u").replace(/punctSpace/g,C).getRegex(),Ke=/[\p{Pi}\p{Ps}"']/u,ce=/(?!~)[\p{P}\p{S}]/u,We=/(?!~)[\s\p{P}\p{S}]/u,Xe=/(?:[^\s\p{P}\p{S}]|~)/u,Je=k(/link|precode-code|html/,"g").replace("link",/\[(?:[^\[\]`]|(?<a>`+)[^`]+\k<a>(?!`))*?\]\((?:\\[\s\S]|[^\\\(\)]|\((?:\\[\s\S]|[^\\\(\)])*\))*\)/).replace("precode-",Le?"(?<!`)()":"(^^|[^`])").replace("code",/(?<b>`+)[^`]+\k<b>(?!`)/).replace("html",/<(?! )[^<>]*?>/).getRegex(),he=/^(?:\*+(?:((?!\*)punct)|([^\s*]))?)|^_+(?:((?!_)punct)|([^\s_]))?/,Ve=k(he,"u").replace(/punct/g,$).getRegex(),Ye=k(he,"u").replace(/punct/g,ce).getRegex(),et=/^(?:\*+(?:((?!\*)(?!openQuote)punct)|([^\s*]))?)|^_+(?:((?!_)(?!openQuote)punct)|([^\s_]))?/,tt=k(et,"u").replace(/openQuote/g,Ke).replace(/punct/g,$).getRegex(),ke="^[^_*]*?__[^_*]*?\\*[^_*]*?(?=__)|[^*]+(?=[^*])|(?!\\*)punct(\\*+)(?=[\\s]|$)|notPunctSpace(\\*+)(?!\\*)(?=punctSpace|$)|(?!\\*)punctSpace(\\*+)(?=notPunctSpace)|[\\s](\\*+)(?!\\*)(?=punct)|(?!\\*)punct(\\*+)(?!\\*)(?=punct)|notPunctSpace(\\*+)(?=notPunctSpace)",nt=k(ke,"gu").replace(/notPunctSpace/g,H).replace(/punctSpace/g,C).replace(/punct/g,$).getRegex(),rt=k(ke,"gu").replace(/notPunctSpace/g,Xe).replace(/punctSpace/g,We).replace(/punct/g,ce).getRegex(),st="^[^_*]*?__[^_*]*?\\*[^_*]*?(?=__)|[^*]+(?=[^*])|(?!\\*)punct(\\*+)(?=[\\s]|$)|notPunctSpace(\\*+)(?!\\*)(?=punctSpace|$)|(?!\\*)[\\s](\\*+)(?=notPunctSpace)|[\\s](\\*+)(?!\\*)(?=punct)|(?!\\*)punct(\\*+)(?!\\*)(?=punct)|(?:(?!\\*)punct|notPunctSpace)(\\*+)(?!\\*)(?=notPunctSpace)",it=k(st,"gu").replace(/notPunctSpace/g,H).replace(/punctSpace/g,C).replace(/punct/g,$).getRegex(),ot=k("^[^_*]*?\\*\\*[^_*]*?_[^_*]*?(?=\\*\\*)|[^_]+(?=[^_])|(?!_)punct(_+)(?=[\\s]|$)|notPunctSpace(_+)(?!_)(?=punctSpace|$)|(?!_)punctSpace(_+)(?=notPunctSpace)|[\\s](_+)(?!_)(?=punct)|(?!_)punct(_+)(?!_)(?=punct)","gu").replace(/notPunctSpace/g,H).replace(/punctSpace/g,C).replace(/punct/g,$).getRegex(),at="^[^_*]*?\\*\\*[^_*]*?_[^_*]*?(?=\\*\\*)|[^_]+(?=[^_])|(?!_)punct(_+)(?=[\\s]|$)|notPunctSpace(_+)(?!_)(?=punctSpace|$)|(?!_)[\\s](_+)(?=notPunctSpace)|[\\s](_+)(?!_)(?=punct)|(?!_)punct(_+)(?!_)(?=punct)|(?:(?!_)punct|notPunctSpace)(_+)(?!_)(?=notPunctSpace)",lt=k(at,"gu").replace(/notPunctSpace/g,H).replace(/punctSpace/g,C).replace(/punct/g,$).getRegex(),ut=k(/^~~?(?:((?!~)punct)|[^\s~])/,"u").replace(/punct/g,$).getRegex(),pt="^[^~]+(?=[^~])|(?!~)punct(~~?)(?=[\\s]|$)|notPunctSpace(~~?)(?!~)(?=punctSpace|$)|(?!~)punctSpace(~~?)(?=notPunctSpace)|[\\s](~~?)(?!~)(?=punct)|(?!~)punct(~~?)(?!~)(?=punct)|notPunctSpace(~~?)(?=notPunctSpace)",ct=k(pt,"gu").replace(/notPunctSpace/g,H).replace(/punctSpace/g,C).replace(/punct/g,$).getRegex(),ht=k(/\\(punct)/,"gu").replace(/punct/g,$).getRegex(),kt=k(/^<(scheme:[^\s\x00-\x1f<>]*|email)>/).replace("scheme",/[a-zA-Z][a-zA-Z0-9+.-]{1,31}/).replace("email",/[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+(@)[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+(?![-_])/).getRegex(),dt=k(J).replace("(?:-->|$)","-->").getRegex(),gt=k("^comment|^</[a-zA-Z][a-zA-Z0-9-]*\\s*>|^<[a-zA-Z][a-zA-Z0-9-]*(?:attribute)*?\\s*/?>|^<\\?[\\s\\S]*?\\?>|^<![a-zA-Z]+\\s[\\s\\S]*?>|^<!\\[CDATA\\[[\\s\\S]*?\\]\\]>").replace("comment",dt).replace("attribute",/\s+[a-zA-Z:_][\w.:-]*(?:\s*=\s*"[^"]*"|\s*=\s*'[^']*'|\s*=\s*[^\s"'=<>`]+)?/).getRegex(),ft=/\[(?:\\[\s\S]|[^\[\]\\])*\]/,G=k(/(?:\[(?:brackets|\\[\s\S]|[^\[\]\\])*\]|\\[\s\S]|`+(?!`)[^`]*?`+(?!`)|``+(?=\])|[^\[\]\\`])*?/).replace("brackets",ft).getRegex(),mt=k(/^!?\[(label)\]\(\s*(href)(?:(?:[ \t]+(?:\n[ \t]*)?|\n[ \t]*)(title))?\s*\)/).replace("label",G).replace("href",/<(?:\\.|[^\n<>\\])+>|[^ \t\n\x00-\x1f]+|(?=\))/).replace("title",/"(?:\\"?|[^"\\])*"|'(?:\\'?|[^'\\])*'|\((?:\\\)?|[^)\\])*\)/).getRegex(),de=k(/^!?\[(label)\]\[(ref)\]/).replace("label",G).replace("ref",X).getRegex(),ge=k(/^!?\[(ref)\](?:\[\])?/).replace("ref",X).getRegex(),xt=k("reflink|nolink(?!\\()","g").replace("reflink",de).replace("nolink",ge).getRegex(),oe=/[hH][tT][tT][pP][sS]?|[fF][tT][pP]/,Y={_backpedal:M,anyPunctuation:ht,autolink:kt,blockSkip:Je,br:pe,code:je,del:M,delLDelim:M,delRDelim:M,emStrongLDelim:Ve,emStrongRDelimAst:nt,emStrongRDelimUnd:ot,escape:Ne,link:mt,nolink:ge,punctuation:Ue,reflink:de,reflinkSearch:xt,tag:gt,text:Fe,url:M},bt={...Y,emStrongLDelim:tt,emStrongRDelimAst:it,emStrongRDelimUnd:lt,link:k(/^!?\[(label)\]\((.*?)\)/).replace("label",G).getRegex(),reflink:k(/^!?\[(label)\]\s*\[([^\]]*)\]/).replace("label",G).getRegex()},U={...Y,emStrongRDelimAst:rt,emStrongLDelim:Ye,delLDelim:ut,delRDelim:ct,url:k(/^((?:protocol):\/\/|www\.)(?:[a-zA-Z0-9\-]+\.?)+[^\s<]*|^email/).replace("protocol",oe).replace("email",/[A-Za-z0-9._+-]+(@)[a-zA-Z0-9-_]+(?:\.[a-zA-Z0-9-_]*[a-zA-Z0-9])+(?![\w-])/).getRegex(),_backpedal:/(?:[^?!.,:;*_'"~()&]+|\([^)]*\)|&(?![a-zA-Z0-9]+;$)|[?!.,:;*_'"~)]+(?!$))+/,del:/^(~~?)(?=[^\s~])((?:\\[\s\S]|[^\\])*?(?:\\[\s\S]|[^\s~\\]))\1(?=[^~]|$)/,text:k(/^(`+|~+|[^`~])(?:(?=[`~])|(?= {2,}\n)|(?=[a-zA-Z0-9.!#$%&'*+\/=?_`{\|}~-]+@)|[\s\S]*?(?:(?=[\\<!\[`*~_]|\b_|protocol:\/\/|www\.|$)|[^ ](?= {2,}\n)|[^a-zA-Z0-9.!#$%&'*+\/=?_`{\|}~-](?=[a-zA-Z0-9.!#$%&'*+\/=?_`{\|}~-]+@)))/).replace("protocol",oe).getRegex()},Rt={...U,br:k(pe).replace("{2,}","*").getRegex(),text:k(U.text).replace("\\b_","\\b_| {2,}\\n").replace(/\{2,\}/g,"*").getRegex()},Z={normal:V,gfm:Ge,pedantic:Qe},B={normal:Y,gfm:U,breaks:Rt,pedantic:bt};var Tt={"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"},fe=l=>Tt[l];function T(l,e){if(e){if(m.escapeTest.test(l))return l.replace(m.escapeReplace,fe)}else if(m.escapeTestNoEncode.test(l))return l.replace(m.escapeReplaceNoEncode,fe);return l}function ee(l){try{l=encodeURI(l).replace(m.percentDecode,"%")}catch{return null}return l}function te(l,e){let t=l.replace(m.findPipe,(r,o,i)=>{let u=!1,a=o;for(;--a>=0&&i[a]==="\\";)u=!u;return u?"|":" |"}),n=t.split(m.splitPipe),s=0;if(n[0].trim()||n.shift(),n.length>0&&!n.at(-1)?.trim()&&n.pop(),e)if(n.length>e)n.splice(e);else for(;n.length<e;)n.push("");for(;s<n.length;s++)n[s]=n[s].trim().replace(m.slashPipe,"|");return n}function L(l,e,t){let n=l.length;if(n===0)return"";let s=0;for(;s<n;){let r=l.charAt(n-s-1);if(r===e&&!t)s++;else if(r!==e&&t)s++;else break}return l.slice(0,n-s)}function ne(l){let e=l.split(`
+`),t=e.length-1;for(;t>=0&&m.blankLine.test(e[t]);)t--;return e.length-t<=2?l:e.slice(0,t+1).join(`
+`)}function me(l,e){if(l.indexOf(e[1])===-1)return-1;let t=0;for(let n=0;n<l.length;n++)if(l[n]==="\\")n++;else if(l[n]===e[0])t++;else if(l[n]===e[1]&&(t--,t<0))return n;return t>0?-2:-1}function xe(l,e=0){let t=e,n="";for(let s of l)if(s==="	"){let r=4-t%4;n+=" ".repeat(r),t+=r}else n+=s,t++;return n}function be(l,e,t,n,s){let r=e.href,o=e.title||null,i=l[1].replace(s.other.outputLinkReplace,"$1"),u=l[0].charAt(0)==="!";n.state.inLink=!0;let a=n.state.linkEmitted,p=n.state.inRawBlock;n.state.linkEmitted=!1;let c=n.inlineTokens(i),h=n.state.linkEmitted;if(n.state.linkEmitted=a,n.state.inLink=!1,!u){if(h){n.state.inRawBlock=p;return}n.state.linkEmitted=!0}return{type:u?"image":"link",raw:t,href:r,title:o,text:i,tokens:c}}function Ot(l,e,t){let n=l.match(t.other.indentCodeCompensation);if(n===null)return e;let s=n[1];return e.split(`
+`).map(r=>{let o=r.match(t.other.beginningSpace);if(o===null)return r;let[i]=o;return r.slice(Math.min(i.length,s.length))}).join(`
+`)}var w=class{options;rules;lexer;constructor(e){this.options=e||R}space(e){let t=this.rules.block.newline.exec(e);if(t&&t[0].length>0)return{type:"space",raw:t[0]}}code(e){let t=this.rules.block.code.exec(e);if(t){let n=this.options.pedantic?t[0]:ne(t[0]),s=n.replace(this.rules.other.codeRemoveIndent,"");return{type:"code",raw:n,codeBlockStyle:"indented",text:s}}}fences(e){let t=this.rules.block.fences.exec(e);if(t){let n=t[0],s=Ot(n,t[3]||"",this.rules);return{type:"code",raw:n,lang:t[2]?t[2].trim().replace(this.rules.inline.anyPunctuation,"$1"):t[2],text:s}}}heading(e){let t=this.rules.block.heading.exec(e);if(t){let n=t[2].trim();if(this.rules.other.endingHash.test(n)){let s=L(n,"#");(this.options.pedantic||!s||this.rules.other.endingSpaceTabChar.test(s))&&(n=s.trim())}return{type:"heading",raw:L(t[0],`
+`),depth:t[1].length,text:n,tokens:this.lexer.inline(n)}}}hr(e){let t=this.rules.block.hr.exec(e);if(t)return{type:"hr",raw:L(t[0],`
+`)}}blockquote(e){let t=this.rules.block.blockquote.exec(e);if(t){let n=L(t[0],`
+`).split(`
+`),s="",r="",o=[];for(;n.length>0;){let i=!1,u=[],a;for(a=0;a<n.length;a++)if(this.rules.other.blockquoteStart.test(n[a]))u.push(n[a]),i=!0;else if(!i)u.push(n[a]);else break;n=n.slice(a);let p=u.join(`
+`),c=p.replace(this.rules.other.blockquoteSetextReplace,`
+    $1`).replace(this.rules.other.blockquoteSetextReplace2,"");s=s?`${s}
+${p}`:p,r=r?`${r}
+${c}`:c;let h=this.lexer.state.top;if(this.lexer.state.top=!0,this.lexer.blockTokens(c,o,!0),this.lexer.state.top=h,n.length===0)break;let d=o.at(-1);if(d?.type==="code")break;if(d?.type==="blockquote"){let O=d,f=n.join(`
+`),S=O.raw+`
+`+f.replace(this.rules.other.blockquoteSetextReplace2,""),z=this.blockquote(S);o[o.length-1]=z,s=`${s}
+${f}`,r=r.substring(0,r.length-O.text.length)+z.text;break}else if(d?.type==="list"){let O=d,f=O.raw+`
+`+n.join(`
+`),S=this.list(f);o[o.length-1]=S,s=s.substring(0,s.length-d.raw.length)+S.raw,r=r.substring(0,r.length-O.raw.length)+S.raw,n=f.substring(o.at(-1).raw.length).split(`
+`);continue}}return{type:"blockquote",raw:s,tokens:o,text:r}}}list(e){let t=this.rules.block.list.exec(e);if(t){let n=t[1].trim(),s=n.length>1,r={type:"list",raw:"",ordered:s,start:s?+n.slice(0,-1):"",loose:!1,items:[]};n=s?`\\d{1,9}\\${n.slice(-1)}`:`\\${n}`,this.options.pedantic&&(n=s?n:"[*+-]");let o=this.rules.other.listItemRegex(n),i=!1;for(;e;){let a=!1,p="",c="";if(!(t=o.exec(e))||this.rules.block.hr.test(e))break;p=t[0],e=e.substring(p.length);let h=xe(t[2].split(`
+`,1)[0],t[1].length),d=e.split(`
+`,1)[0],O=!h.trim(),f=0;if(this.options.pedantic?(f=2,c=h.trimStart()):O?f=t[1].length+1:(f=h.search(this.rules.other.nonSpaceChar),f=f>4?1:f,c=h.slice(f),f+=t[1].length),O&&this.rules.other.blankLine.test(d)&&(p+=d+`
+`,e=e.substring(d.length+1),a=!0),!a){let S=this.rules.other.nextBulletRegex(f),z=this.rules.other.hrRegex(f),re=this.rules.other.fencesBeginRegex(f),se=this.rules.other.headingBeginRegex(f),Te=this.rules.other.htmlBeginRegex(f),Oe=this.rules.other.blockquoteBeginRegex(f);for(;e;){let N=e.split(`
+`,1)[0],q;if(d=N,this.options.pedantic?(d=d.replace(this.rules.other.listReplaceNesting,"  "),q=d):q=d.replace(this.rules.other.tabCharGlobal,"    "),re.test(d)||se.test(d)||Te.test(d)||Oe.test(d)||S.test(d)||z.test(d))break;if(q.search(this.rules.other.nonSpaceChar)>=f||!d.trim())c+=`
+`+q.slice(f);else{if(O||h.replace(this.rules.other.tabCharGlobal,"    ").search(this.rules.other.nonSpaceChar)>=4||re.test(h)||se.test(h)||z.test(h))break;c+=`
+`+d}O=!d.trim(),p+=N+`
+`,e=e.substring(N.length+1),h=q.slice(f)}}r.loose||(i?r.loose=!0:this.rules.other.doubleBlankLine.test(p)&&(i=!0)),r.items.push({type:"list_item",raw:p,task:!!this.options.gfm&&this.rules.other.listIsTask.test(c),loose:!1,text:c,tokens:[]}),r.raw+=p}let u=r.items.at(-1);if(u)u.raw=u.raw.trimEnd(),u.text=u.text.trimEnd();else return;r.raw=r.raw.trimEnd();for(let a of r.items)if(this.lexer.state.top=!1,a.tokens=this.lexer.blockTokens(a.text,[]),!r.loose){let p=a.tokens.filter(h=>h.type==="space"),c=p.length>0&&p.some(h=>this.rules.other.anyLine.test(h.raw));r.loose=c}for(let a of r.items){let p=a.tokens[0];if(a.task&&(p?.type==="text"||p?.type==="paragraph")){a.text=a.text.replace(this.rules.other.listReplaceTask,""),p.raw=p.raw.replace(this.rules.other.listReplaceTask,""),p.text=p.text.replace(this.rules.other.listReplaceTask,"");for(let h=this.lexer.inlineQueue.length-1;h>=0;h--)if(this.rules.other.listIsTask.test(this.lexer.inlineQueue[h].src)){this.lexer.inlineQueue[h].src=this.lexer.inlineQueue[h].src.replace(this.rules.other.listReplaceTask,"");break}let c=this.rules.other.listTaskCheckbox.exec(a.raw);if(c){let h={type:"checkbox",raw:c[0]+" ",checked:c[0]!=="[ ]"};a.checked=h.checked,r.loose?a.tokens[0]&&["paragraph","text"].includes(a.tokens[0].type)&&"tokens"in a.tokens[0]&&a.tokens[0].tokens?(a.tokens[0].raw=h.raw+a.tokens[0].raw,a.tokens[0].text=h.raw+a.tokens[0].text,a.tokens[0].tokens.unshift(h)):a.tokens.unshift({type:"paragraph",raw:h.raw,text:h.raw,tokens:[h]}):a.tokens.unshift(h)}}else a.task&&(a.task=!1)}if(r.loose)for(let a of r.items){a.loose=!0;for(let p of a.tokens)p.type==="text"&&(p.type="paragraph")}return r}}html(e){let t=this.rules.block.html.exec(e);if(t){let n=ne(t[0]);return{type:"html",block:!0,raw:n,pre:t[1]==="pre"||t[1]==="script"||t[1]==="style",text:n}}}def(e){let t=this.rules.block.def.exec(e);if(t){let n=t[1].toLowerCase().replace(this.rules.other.multipleSpaceGlobal," "),s=t[2]?t[2].replace(this.rules.other.hrefBrackets,"$1").replace(this.rules.inline.anyPunctuation,"$1"):"",r=t[3]?t[3].substring(1,t[3].length-1).replace(this.rules.inline.anyPunctuation,"$1"):t[3];return{type:"def",tag:n,raw:L(t[0],`
+`),href:s,title:r}}}table(e){let t=this.rules.block.table.exec(e);if(!t||!this.rules.other.tableDelimiter.test(t[2]))return;let n=te(t[1]),s=t[2].replace(this.rules.other.tableAlignChars,"").split("|"),r=t[3]?.trim()?t[3].replace(this.rules.other.tableRowBlankLine,"").split(`
+`):[],o={type:"table",raw:L(t[0],`
+`),header:[],align:[],rows:[]};if(n.length===s.length){for(let i of s)this.rules.other.tableAlignRight.test(i)?o.align.push("right"):this.rules.other.tableAlignCenter.test(i)?o.align.push("center"):this.rules.other.tableAlignLeft.test(i)?o.align.push("left"):o.align.push(null);for(let i=0;i<n.length;i++)o.header.push({text:n[i],tokens:this.lexer.inline(n[i]),header:!0,align:o.align[i]});for(let i of r)o.rows.push(te(i,o.header.length).map((u,a)=>({text:u,tokens:this.lexer.inline(u),header:!1,align:o.align[a]})));return o}}lheading(e){let t=this.rules.block.lheading.exec(e);if(t){let n=t[1].trim();return{type:"heading",raw:L(t[0],`
+`),depth:t[2].charAt(0)==="="?1:2,text:n,tokens:this.lexer.inline(n)}}}paragraph(e){let t=this.rules.block.paragraph.exec(e);if(t){let n=t[1].charAt(t[1].length-1)===`
+`?t[1].slice(0,-1):t[1];return{type:"paragraph",raw:t[0],text:n,tokens:this.lexer.inline(n)}}}text(e){let t=this.rules.block.text.exec(e);if(t)return{type:"text",raw:t[0],text:t[0],tokens:this.lexer.inline(t[0])}}escape(e){let t=this.rules.inline.escape.exec(e);if(t)return{type:"escape",raw:t[0],text:t[1]}}tag(e){let t=this.rules.inline.tag.exec(e);if(t)return!this.lexer.state.inLink&&this.rules.other.startATag.test(t[0])?this.lexer.state.inLink=!0:this.lexer.state.inLink&&this.rules.other.endATag.test(t[0])&&(this.lexer.state.inLink=!1),!this.lexer.state.inRawBlock&&this.rules.other.startPreScriptTag.test(t[0])?this.lexer.state.inRawBlock=!0:this.lexer.state.inRawBlock&&this.rules.other.endPreScriptTag.test(t[0])&&(this.lexer.state.inRawBlock=!1),{type:"html",raw:t[0],inLink:this.lexer.state.inLink,inRawBlock:this.lexer.state.inRawBlock,block:!1,text:t[0]}}link(e){let t=this.rules.inline.link.exec(e);if(t){let n=t[2].trim();if(!this.options.pedantic&&this.rules.other.startAngleBracket.test(n)){if(!this.rules.other.endAngleBracket.test(n))return;let o=L(n.slice(0,-1),"\\");if((n.length-o.length)%2===0)return}else{let o=me(t[2],"()");if(o===-2)return;if(o>-1){let u=(t[0].indexOf("!")===0?5:4)+t[1].length+o;t[2]=t[2].substring(0,o),t[0]=t[0].substring(0,u).trim(),t[3]=""}}let s=t[2],r="";if(this.options.pedantic){let o=this.rules.other.pedanticHrefTitle.exec(s);o&&(s=o[1],r=o[3])}else r=t[3]?t[3].slice(1,-1):"";return s=s.trim(),this.rules.other.startAngleBracket.test(s)&&(this.options.pedantic&&!this.rules.other.endAngleBracket.test(n)?s=s.slice(1):s=s.slice(1,-1)),be(t,{href:s&&s.replace(this.rules.inline.anyPunctuation,"$1"),title:r&&r.replace(this.rules.inline.anyPunctuation,"$1")},t[0],this.lexer,this.rules)}}reflink(e,t){let n;if((n=this.rules.inline.reflink.exec(e))||(n=this.rules.inline.nolink.exec(e))){let s=(n[2]||n[1]).replace(this.rules.other.multipleSpaceGlobal," "),r=t[s.toLowerCase()];if(!r){let o=n[0].charAt(0);return{type:"text",raw:o,text:o}}return be(n,r,n[0],this.lexer,this.rules)}}emStrong(e,t,n=""){let s=this.rules.inline.emStrongLDelim.exec(e);if(!s||!s[1]&&!s[2]&&!s[3]&&!s[4]||s[4]&&n.match(this.rules.other.unicodeAlphaNumeric))return;if(!(s[1]||s[3]||"")||!n||this.rules.inline.punctuation.exec(n)){let o=[...s[0]].length-1,i,u,a=o,p=0,c=s[0][0],h=n===c,d=c==="*"?this.rules.inline.emStrongRDelimAst:this.rules.inline.emStrongRDelimUnd;for(d.lastIndex=0,t=t.slice(-1*e.length+o);(s=d.exec(t))!==null;){if(i=s[1]||s[2]||s[3]||s[4]||s[5]||s[6],!i)continue;if(u=[...i].length,s[3]||s[4]){a+=u;continue}else if(s[5]||s[6]){if(o%3&&!((o+u)%3)){p+=u;continue}if(h)break}if(a-=u,a>0)continue;u=Math.min(u,u+a+p);let O=[...s[0]][0].length,f=e.slice(0,o+s.index+O+u);if(Math.min(o,u)%2){let z=f.slice(1,-1);return{type:"em",raw:f,text:z,tokens:this.lexer.inlineTokens(z)}}let S=f.slice(2,-2);return{type:"strong",raw:f,text:S,tokens:this.lexer.inlineTokens(S)}}}}codespan(e){let t=this.rules.inline.code.exec(e);if(t){let n=t[2].replace(this.rules.other.newLineCharGlobal," "),s=this.rules.other.nonSpaceChar.test(n),r=this.rules.other.startingSpaceChar.test(n)&&this.rules.other.endingSpaceChar.test(n);return s&&r&&(n=n.substring(1,n.length-1)),{type:"codespan",raw:t[0],text:n}}}br(e){let t=this.rules.inline.br.exec(e);if(t)return{type:"br",raw:t[0]}}del(e,t,n=""){let s=this.rules.inline.delLDelim.exec(e);if(!s)return;if(!(s[1]||"")||!n||this.rules.inline.punctuation.exec(n)){let o=[...s[0]].length-1,i,u,a=o,p=this.rules.inline.delRDelim;for(p.lastIndex=0,t=t.slice(-1*e.length+o);(s=p.exec(t))!==null;){if(i=s[1]||s[2]||s[3]||s[4]||s[5]||s[6],!i||(u=[...i].length,u!==o))continue;if(s[3]||s[4]){a+=u;continue}if(a-=u,a>0)continue;u=Math.min(u,u+a);let c=[...s[0]][0].length,h=e.slice(0,o+s.index+c+u),d=h.slice(o,-o);return{type:"del",raw:h,text:d,tokens:this.lexer.inlineTokens(d)}}}}autolink(e){let t=this.rules.inline.autolink.exec(e);if(t){let n,s;return t[2]==="@"?(n=t[1],s="mailto:"+n):(n=t[1],s=n),{type:"link",raw:t[0],text:n,href:s,autolink:!0,tokens:[{type:"text",raw:n,text:n}]}}}url(e){let t;if(t=this.rules.inline.url.exec(e)){let n,s;if(t[2]==="@")n=t[0],s="mailto:"+n;else{let r;do r=t[0],t[0]=this.rules.inline._backpedal.exec(t[0])?.[0]??"";while(r!==t[0]);n=t[0],t[1]==="www."?s="http://"+t[0]:s=t[0]}return{type:"link",raw:t[0],text:n,href:s,autolink:!0,tokens:[{type:"text",raw:n,text:n}]}}}inlineText(e){let t=this.rules.inline.text.exec(e);if(t){let n=this.lexer.state.inRawBlock;return{type:"text",raw:t[0],text:t[0],escaped:n}}}};var x=class l{tokens;options;state;inlineQueue;tokenizer;constructor(e){this.tokens=[],this.tokens.links=Object.create(null),this.options=e||R,this.options.tokenizer=this.options.tokenizer||new w,this.tokenizer=this.options.tokenizer,this.tokenizer.options=this.options,this.tokenizer.lexer=this,this.inlineQueue=[],this.state={inLink:!1,inRawBlock:!1,linkEmitted:!1,top:!0};let t={other:m,block:Z.normal,inline:B.normal};this.options.pedantic?(t.block=Z.pedantic,t.inline=B.pedantic):this.options.gfm&&(t.block=Z.gfm,this.options.breaks?t.inline=B.breaks:t.inline=B.gfm),this.tokenizer.rules=t}static get rules(){return{block:Z,inline:B}}static lex(e,t){return new l(t).lex(e)}static lexInline(e,t){return new l(t).inlineTokens(e)}lex(e){e=e.replace(m.carriageReturn,`
+`),this.blockTokens(e,this.tokens);for(let t=0;t<this.inlineQueue.length;t++){let n=this.inlineQueue[t];this.inlineTokens(n.src,n.tokens)}return this.inlineQueue=[],this.tokens}blockTokens(e,t=[],n=!1){this.tokenizer.lexer=this,this.options.pedantic&&(e=e.replace(m.tabCharGlobal,"    ").replace(m.spaceLine,""));let s=1/0;for(;e;){if(e.length<s)s=e.length;else{this.infiniteLoopError(e.charCodeAt(0));break}let r;if(this.options.extensions?.block?.some(i=>(r=i.call({lexer:this},e,t))?(e=e.substring(r.raw.length),t.push(r),!0):!1))continue;if(r=this.tokenizer.space(e)){e=e.substring(r.raw.length);let i=t.at(-1);r.raw.length===1&&i!==void 0?i.raw+=`
+`:t.push(r);continue}if(r=this.tokenizer.code(e)){e=e.substring(r.raw.length);let i=t.at(-1);i?.type==="paragraph"||i?.type==="text"?(i.raw+=(i.raw.endsWith(`
+`)?"":`
+`)+r.raw,i.text+=`
+`+r.text,this.inlineQueue.at(-1).src=i.text):t.push(r);continue}if(r=this.tokenizer.fences(e)){e=e.substring(r.raw.length),t.push(r);continue}if(r=this.tokenizer.heading(e)){e=e.substring(r.raw.length),t.push(r);continue}if(r=this.tokenizer.hr(e)){e=e.substring(r.raw.length),t.push(r);continue}if(r=this.tokenizer.blockquote(e)){e=e.substring(r.raw.length),t.push(r);continue}if(r=this.tokenizer.list(e)){e=e.substring(r.raw.length),t.push(r);continue}if(r=this.tokenizer.html(e)){e=e.substring(r.raw.length),t.push(r);continue}if(r=this.tokenizer.def(e)){e=e.substring(r.raw.length);let i=t.at(-1);i?.type==="paragraph"||i?.type==="text"?(i.raw+=(i.raw.endsWith(`
+`)?"":`
+`)+r.raw,i.text+=`
+`+r.raw,this.inlineQueue.at(-1).src=i.text):this.tokens.links[r.tag]||(this.tokens.links[r.tag]={href:r.href,title:r.title},t.push(r));continue}if(r=this.tokenizer.table(e)){e=e.substring(r.raw.length),t.push(r);continue}if(r=this.tokenizer.lheading(e)){e=e.substring(r.raw.length),t.push(r);continue}let o=e;if(this.options.extensions?.startBlock){let i=1/0,u=e.slice(1),a;this.options.extensions.startBlock.forEach(p=>{a=p.call({lexer:this},u),typeof a=="number"&&a>=0&&(i=Math.min(i,a))}),i<1/0&&i>=0&&(o=e.substring(0,i+1))}if(this.state.top&&(r=this.tokenizer.paragraph(o))){let i=t.at(-1);n&&i?.type==="paragraph"?(i.raw+=(i.raw.endsWith(`
+`)?"":`
+`)+r.raw,i.text+=`
+`+r.text,this.inlineQueue.pop(),this.inlineQueue.at(-1).src=i.text):t.push(r),n=o.length!==e.length,e=e.substring(r.raw.length);continue}if(r=this.tokenizer.text(e)){e=e.substring(r.raw.length);let i=t.at(-1);i?.type==="text"?(i.raw+=(i.raw.endsWith(`
+`)?"":`
+`)+r.raw,i.text+=`
+`+r.text,this.inlineQueue.pop(),this.inlineQueue.at(-1).src=i.text):t.push(r);continue}if(e){this.infiniteLoopError(e.charCodeAt(0));break}}return this.state.top=!0,t}inline(e,t=[]){return this.inlineQueue.push({src:e,tokens:t}),t}linkInText(e){if(!e.includes("["))return!1;let t=this.tokenizer.rules.inline.link;for(let n of e.matchAll(this.tokenizer.rules.inline.blockSkip))if(t.test(n[0])&&e.charAt(n.index-1)!=="!")return!0;for(let n of e.matchAll(this.tokenizer.rules.inline.reflinkSearch)){let s=n[0],r=s.lastIndexOf("[");if(!(s.charAt(0)==="!"||!Object.hasOwn(this.tokens.links,s.slice(r+1,-1)))&&!(r>1&&this.linkInText(s.slice(1,r-1))))return!0}return!1}inlineTokens(e,t=[]){this.tokenizer.lexer=this;let n=e;if(this.tokens.links&&e.includes("[")){let i=this.tokenizer.rules.inline.reflinkSearch,u=a=>{let p=a.lastIndexOf("[");if(!Object.hasOwn(this.tokens.links,a.slice(p+1,-1)))return a;if(p>1&&a.charAt(0)!=="!"){let c=a.slice(1,p-1);if(this.linkInText(c))return"["+c.replace(i,u)+"]["+"a".repeat(a.length-p-2)+"]"}return"["+"a".repeat(a.length-2)+"]"};n=n.replace(i,u)}n=n.replace(this.tokenizer.rules.inline.anyPunctuation,i=>"+".repeat(i.length)),n=n.replace(this.tokenizer.rules.inline.blockSkip,(i,u,a)=>{let p=a?a.length:0;return i.slice(0,p)+"["+"a".repeat(i.length-p-2)+"]"}),n=this.options.hooks?.emStrongMask?.call({lexer:this},n)??n;let s=!1,r="",o=1/0;for(;e;){if(e.length<o)o=e.length;else{this.infiniteLoopError(e.charCodeAt(0));break}s||(r=""),s=!1;let i;if(this.options.extensions?.inline?.some(a=>(i=a.call({lexer:this},e,t))?(e=e.substring(i.raw.length),t.push(i),!0):!1))continue;if(i=this.tokenizer.escape(e)){e=e.substring(i.raw.length),t.push(i);continue}if(i=this.tokenizer.tag(e)){e=e.substring(i.raw.length),t.push(i);continue}if(i=this.tokenizer.link(e)){e=e.substring(i.raw.length),t.push(i);continue}if(i=this.tokenizer.reflink(e,this.tokens.links)){e=e.substring(i.raw.length);let a=t.at(-1);i.type==="text"&&a?.type==="text"?(a.raw+=i.raw,a.text+=i.text):t.push(i);continue}if(i=this.tokenizer.emStrong(e,n,r)){e=e.substring(i.raw.length),t.push(i);continue}if(i=this.tokenizer.codespan(e)){e=e.substring(i.raw.length),t.push(i);continue}if(i=this.tokenizer.br(e)){e=e.substring(i.raw.length),t.push(i);continue}if(i=this.tokenizer.del(e,n,r)){e=e.substring(i.raw.length),t.push(i);continue}if(i=this.tokenizer.autolink(e)){e=e.substring(i.raw.length),t.push(i);continue}if(!this.state.inLink&&(i=this.tokenizer.url(e))){e=e.substring(i.raw.length),t.push(i);continue}let u=e;if(this.options.extensions?.startInline){let a=1/0,p=e.slice(1),c;this.options.extensions.startInline.forEach(h=>{c=h.call({lexer:this},p),typeof c=="number"&&c>=0&&(a=Math.min(a,c))}),a<1/0&&a>=0&&(u=e.substring(0,a+1))}if(i=this.tokenizer.inlineText(u)){e=e.substring(i.raw.length),i.raw.slice(-1)!=="_"&&(r=i.raw.slice(-1)),s=!0;let a=t.at(-1);a?.type==="text"?(a.raw+=i.raw,a.text+=i.text):t.push(i);continue}if(e){this.infiniteLoopError(e.charCodeAt(0));break}}return t}infiniteLoopError(e){let t="Infinite loop on byte: "+e;if(this.options.silent)console.error(t);else throw new Error(t)}};var y=class{options;parser;constructor(e){this.options=e||R}space(e){return""}code({text:e,lang:t,escaped:n}){let s=(t||"").match(m.notSpaceStart)?.[0],r=e?e.replace(m.endingNewline,"")+`
+`:"";return s?'<pre><code class="language-'+T(s)+'">'+(n?r:T(r,!0))+`</code></pre>
+`:"<pre><code>"+(n?r:T(r,!0))+`</code></pre>
+`}blockquote({tokens:e}){return`<blockquote>
+${this.parser.parse(e)}</blockquote>
+`}html({text:e}){return e}def(e){return""}heading({tokens:e,depth:t}){return`<h${t}>${this.parser.parseInline(e)}</h${t}>
+`}hr(e){return`<hr>
+`}list(e){let t=e.ordered,n=e.start,s="";for(let i=0;i<e.items.length;i++){let u=e.items[i];s+=this.listitem(u)}let r=t?"ol":"ul",o=t&&n!==1?' start="'+n+'"':"";return"<"+r+o+`>
+`+s+"</"+r+`>
+`}listitem(e){return`<li>${this.parser.parse(e.tokens)}</li>
+`}checkbox({checked:e}){return"<input "+(e?'checked="" ':"")+'disabled="" type="checkbox"> '}paragraph({tokens:e}){return`<p>${this.parser.parseInline(e)}</p>
+`}table(e){let t="",n="";for(let r=0;r<e.header.length;r++)n+=this.tablecell(e.header[r]);t+=this.tablerow({text:n});let s="";for(let r=0;r<e.rows.length;r++){let o=e.rows[r];n="";for(let i=0;i<o.length;i++)n+=this.tablecell(o[i]);s+=this.tablerow({text:n})}return s&&(s=`<tbody>${s}</tbody>`),`<table>
+<thead>
+`+t+`</thead>
+`+s+`</table>
+`}tablerow({text:e}){return`<tr>
+${e}</tr>
+`}tablecell(e){let t=this.parser.parseInline(e.tokens),n=e.header?"th":"td";return(e.align?`<${n} align="${e.align}">`:`<${n}>`)+t+`</${n}>
+`}strong({tokens:e}){return`<strong>${this.parser.parseInline(e)}</strong>`}em({tokens:e}){return`<em>${this.parser.parseInline(e)}</em>`}codespan({text:e}){return`<code>${T(e,!0)}</code>`}br(e){return"<br>"}del({tokens:e}){return`<del>${this.parser.parseInline(e)}</del>`}link({href:e,title:t,text:n,tokens:s,autolink:r}){let o=r?T(n,!0):this.parser.parseInline(s),i=ee(e);if(i===null)return o;e=T(i,r);let u='<a href="'+e+'"';return t&&(u+=' title="'+T(t)+'"'),u+=">"+o+"</a>",u}image({href:e,title:t,text:n,tokens:s}){s&&(n=this.parser.parseInline(s,this.parser.textRenderer));let r=ee(e);if(r===null)return T(n);e=r;let o=`<img src="${T(e)}" alt="${T(n)}"`;return t&&(o+=` title="${T(t)}"`),o+=">",o}text(e){return"tokens"in e&&e.tokens?this.parser.parseInline(e.tokens):"escaped"in e&&e.escaped?e.text:T(e.text)}};var _=class{strong({text:e}){return e}em({text:e}){return e}codespan({text:e}){return e}del({text:e}){return e}html({text:e}){return e}text({text:e}){return e}link({text:e}){return""+e}image({text:e}){return""+e}br(){return""}checkbox({raw:e}){return e}};var b=class l{options;renderer;textRenderer;constructor(e){this.options=e||R,this.options.renderer=this.options.renderer||new y,this.renderer=this.options.renderer,this.renderer.options=this.options,this.renderer.parser=this,this.textRenderer=new _}static parse(e,t){return new l(t).parse(e)}static parseInline(e,t){return new l(t).parseInline(e)}parse(e){this.renderer.parser=this;let t="";for(let n=0;n<e.length;n++){let s=e[n];if(this.options.extensions?.renderers?.[s.type]){let o=s,i=this.options.extensions.renderers[o.type].call({parser:this},o);if(i!==!1||!["space","hr","heading","code","table","blockquote","list","checkbox","html","def","paragraph","text"].includes(o.type)){t+=i||"";continue}}let r=s;switch(r.type){case"space":{t+=this.renderer.space(r);break}case"hr":{t+=this.renderer.hr(r);break}case"heading":{t+=this.renderer.heading(r);break}case"code":{t+=this.renderer.code(r);break}case"table":{t+=this.renderer.table(r);break}case"blockquote":{t+=this.renderer.blockquote(r);break}case"list":{t+=this.renderer.list(r);break}case"checkbox":{t+=this.renderer.checkbox(r);break}case"html":{t+=this.renderer.html(r);break}case"def":{t+=this.renderer.def(r);break}case"paragraph":{t+=this.renderer.paragraph(r);break}case"text":{t+=this.renderer.text(r);break}default:{let o='Token with "'+r.type+'" type was not found.';if(this.options.silent)return console.error(o),"";throw new Error(o)}}}return t}parseInline(e,t=this.renderer){this.renderer.parser=this;let n="";for(let s=0;s<e.length;s++){let r=e[s];if(this.options.extensions?.renderers?.[r.type]){let i=this.options.extensions.renderers[r.type].call({parser:this},r);if(i!==!1||!["escape","html","link","image","checkbox","strong","em","codespan","br","del","text"].includes(r.type)){n+=i||"";continue}}let o=r;switch(o.type){case"escape":{n+=t.text(o);break}case"html":{n+=t.html(o);break}case"link":{n+=t.link(o);break}case"image":{n+=t.image(o);break}case"checkbox":{n+=t.checkbox(o);break}case"strong":{n+=t.strong(o);break}case"em":{n+=t.em(o);break}case"codespan":{n+=t.codespan(o);break}case"br":{n+=t.br(o);break}case"del":{n+=t.del(o);break}case"text":{n+=t.text(o);break}default:{let i='Token with "'+o.type+'" type was not found.';if(this.options.silent)return console.error(i),"";throw new Error(i)}}}return n}};var P=class{options;block;constructor(e){this.options=e||R}static passThroughHooks=new Set(["preprocess","postprocess","processAllTokens","emStrongMask"]);static passThroughHooksRespectAsync=new Set(["preprocess","postprocess","processAllTokens"]);preprocess(e){return e}postprocess(e){return e}processAllTokens(e){return e}emStrongMask(e){return e}provideLexer(e=this.block){return e?x.lex:x.lexInline}provideParser(e=this.block){return e?b.parse:b.parseInline}};var D=class{defaults=E();options=this.setOptions;parse=this.parseMarkdown(!0);parseInline=this.parseMarkdown(!1);Parser=b;Renderer=y;TextRenderer=_;Lexer=x;Tokenizer=w;Hooks=P;constructor(...e){this.use(...e)}walkTokens(e,t){let n=[];for(let s of e)switch(n=n.concat(t.call(this,s)),s.type){case"table":{let r=s;for(let o of r.header)n=n.concat(this.walkTokens(o.tokens,t));for(let o of r.rows)for(let i of o)n=n.concat(this.walkTokens(i.tokens,t));break}case"list":{let r=s;n=n.concat(this.walkTokens(r.items,t));break}default:{let r=s;this.defaults.extensions?.childTokens?.[r.type]?this.defaults.extensions.childTokens[r.type].forEach(o=>{let i=r[o].flat(1/0);n=n.concat(this.walkTokens(i,t))}):r.tokens&&(n=n.concat(this.walkTokens(r.tokens,t)))}}return n}use(...e){let t=this.defaults.extensions||{renderers:{},childTokens:{}};return e.forEach(n=>{let s={...n};if(s.async=this.defaults.async||s.async||!1,n.extensions&&(n.extensions.forEach(r=>{if(!r.name)throw new Error("extension name required");if("renderer"in r){let o=t.renderers[r.name];o?t.renderers[r.name]=function(...i){let u=r.renderer.apply(this,i);return u===!1&&(u=o.apply(this,i)),u}:t.renderers[r.name]=r.renderer}if("tokenizer"in r){if(!r.level||r.level!=="block"&&r.level!=="inline")throw new Error("extension level must be 'block' or 'inline'");let o=t[r.level];o?o.unshift(r.tokenizer):t[r.level]=[r.tokenizer],r.start&&(r.level==="block"?t.startBlock?t.startBlock.push(r.start):t.startBlock=[r.start]:r.level==="inline"&&(t.startInline?t.startInline.push(r.start):t.startInline=[r.start]))}"childTokens"in r&&r.childTokens&&(t.childTokens[r.name]=r.childTokens)}),s.extensions=t),n.renderer){let r=this.defaults.renderer||new y(this.defaults);for(let o in n.renderer){if(!(o in r))throw new Error(`renderer '${o}' does not exist`);if(["options","parser"].includes(o))continue;let i=o,u=n.renderer[i],a=r[i];r[i]=(...p)=>{let c=u.apply(r,p);return c===!1&&(c=a.apply(r,p)),c||""}}s.renderer=r}if(n.tokenizer){let r=this.defaults.tokenizer||new w(this.defaults);for(let o in n.tokenizer){if(!(o in r))throw new Error(`tokenizer '${o}' does not exist`);if(["options","rules","lexer"].includes(o))continue;let i=o,u=n.tokenizer[i],a=r[i];r[i]=(...p)=>{let c=u.apply(r,p);return c===!1&&(c=a.apply(r,p)),c}}s.tokenizer=r}if(n.hooks){let r=this.defaults.hooks||new P;for(let o in n.hooks){if(!(o in r))throw new Error(`hook '${o}' does not exist`);if(["options","block"].includes(o))continue;let i=o,u=n.hooks[i],a=r[i];P.passThroughHooks.has(o)?r[i]=p=>{if(this.defaults.async&&P.passThroughHooksRespectAsync.has(o))return(async()=>{let h=await u.call(r,p);return a.call(r,h)})();let c=u.call(r,p);return a.call(r,c)}:r[i]=(...p)=>{if(this.defaults.async)return(async()=>{let h=await u.apply(r,p);return h===!1&&(h=await a.apply(r,p)),h})();let c=u.apply(r,p);return c===!1&&(c=a.apply(r,p)),c}}s.hooks=r}if(n.walkTokens){let r=this.defaults.walkTokens,o=n.walkTokens;s.walkTokens=function(i){let u=[];return u.push(o.call(this,i)),r&&(u=u.concat(r.call(this,i))),u}}this.defaults={...this.defaults,...s}}),this}setOptions(e){return this.defaults={...this.defaults,...e},this}lexer(e,t){return x.lex(e,t??this.defaults)}parser(e,t){return b.parse(e,t??this.defaults)}parseMarkdown(e){return(n,s)=>{let r={...s},o={...this.defaults,...r},i=this.onError(!!o.silent,!!o.async);if(this.defaults.async===!0&&r.async===!1)return i(new Error("marked(): The async option was set to true by an extension. Remove async: false from the parse options object to return a Promise."));if(typeof n>"u"||n===null)return i(new Error("marked(): input parameter is undefined or null"));if(typeof n!="string")return i(new Error("marked(): input parameter is of type "+Object.prototype.toString.call(n)+", string expected"));if(o.hooks&&(o.hooks.options=o,o.hooks.block=e),o.async)return(async()=>{let u=o.hooks?await o.hooks.preprocess(n):n,p=await(o.hooks?await o.hooks.provideLexer(e):e?x.lex:x.lexInline)(u,o),c=o.hooks?await o.hooks.processAllTokens(p):p;o.walkTokens&&await Promise.all(this.walkTokens(c,o.walkTokens));let d=await(o.hooks?await o.hooks.provideParser(e):e?b.parse:b.parseInline)(c,o);return o.hooks?await o.hooks.postprocess(d):d})().catch(i);try{o.hooks&&(n=o.hooks.preprocess(n));let a=(o.hooks?o.hooks.provideLexer(e):e?x.lex:x.lexInline)(n,o);o.hooks&&(a=o.hooks.processAllTokens(a)),o.walkTokens&&this.walkTokens(a,o.walkTokens);let c=(o.hooks?o.hooks.provideParser(e):e?b.parse:b.parseInline)(a,o);return o.hooks&&(c=o.hooks.postprocess(c)),c}catch(u){return i(u)}}}onError(e,t){return n=>{if(n.message+=`
+Please report this to https://github.com/markedjs/marked.`,e){let s="<p>An error occurred:</p><pre>"+T(n.message+"",!0)+"</pre>";return t?Promise.resolve(s):s}if(t)return Promise.reject(n);throw n}}};var A=new D;function g(l,e){return A.parse(l,e)}g.options=g.setOptions=function(l){return A.setOptions(l),g.defaults=A.defaults,F(g.defaults),g};g.getDefaults=E;g.defaults=R;function Re(...l){return A.use(...l),g.defaults=A.defaults,F(g.defaults),g}g.use=Re;g.walkTokens=function(l,e){return A.walkTokens(l,e)};g.parseInline=A.parseInline;g.Parser=b;g.parser=b.parse;g.Renderer=y;g.TextRenderer=_;g.Lexer=x;g.lexer=x.lex;g.Tokenizer=w;g.Hooks=P;g.parse=g;var wt=g.options,yt=g.setOptions,Pt=g.walkTokens,St=g.parseInline,_t=g,$t=b.parse,Lt=x.lex;
+
+if(__exports != exports)module.exports = exports;return module.exports}));
+//# sourceMappingURL=marked.umd.js.map
+</script><script>
+const questions = [...document.querySelectorAll('.question')];
+const parts = [...document.querySelectorAll('.part')];
+const search = document.getElementById('search');
+const category = document.getElementById('category');
+const importance=document.getElementById('importance'), sort=document.getElementById('sort');
+const ranks={Critical:0,High:1,Medium:2,Low:3};
+const priorityList=document.createElement('section');priorityList.id='priority-list';priorityList.innerHTML='<h2>Important first <span class="category-caption">Critical → High → Medium → Low · 동일 등급은 문항 번호순</span></h2>';document.getElementById('question-bank').prepend(priorityList);
+questions.forEach(q=>{const caption=document.createElement('small');caption.className='category-caption';caption.textContent=parts[+q.dataset.category].querySelector('h2').textContent;q.querySelector('.question-title').append(caption);q.open=false;});
+const studyFilter=document.getElementById('study-filter');
+let saved={};try{saved=JSON.parse(localStorage.getItem('airbnb-study-v2')||'{}')||{};}catch(e){}
+let completed=new Set(Array.isArray(saved.completed)?saved.completed:[]);
+let quizMode=!!saved.quiz;
+let dark=saved.theme==='dark'||(!saved.theme&&matchMedia('(prefers-color-scheme: dark)').matches);
+function saveStudy(){try{localStorage.setItem('airbnb-study-v2',JSON.stringify({completed:[...completed],theme:dark?'dark':'light',quiz:quizMode}));}catch(e){document.getElementById('save-note').textContent='브라우저 저장을 사용할 수 없어 이번에 연 페이지에서만 상태가 유지됩니다.';}}
+function updateProgress(){const count=questions.filter(q=>completed.has(q.id)).length;document.getElementById('study-count').textContent=count+' / 50 공부 완료';document.getElementById('study-progress').value=count;}
+function applyTheme(){document.documentElement.dataset.theme=dark?'dark':'light';const b=document.getElementById('theme-toggle');b.textContent=dark?'라이트모드로':'다크모드로';b.setAttribute('aria-pressed',String(dark));}
+function applyQuiz(){document.body.classList.toggle('quiz-mode',quizMode);document.getElementById('quiz-toggle').checked=quizMode;questions.forEach(q=>{q.classList.remove('revealed');q.querySelector('.reveal-answer').textContent='답변 보기';q.querySelector('.reveal-answer').setAttribute('aria-expanded','false');});}
+questions.forEach(q=>{
+ const label=document.createElement('label');label.className='done-label';const cb=document.createElement('input');cb.type='checkbox';cb.checked=completed.has(q.id);cb.setAttribute('aria-label','Q'+q.id.slice(1)+' 공부 완료');label.append(cb,document.createTextNode('완료'));q.querySelector('summary').insertBefore(label,q.querySelector('.chevron'));label.addEventListener('click',e=>e.stopPropagation());q.classList.toggle('completed',cb.checked);
+ cb.onchange=()=>{cb.checked?completed.add(q.id):completed.delete(q.id);q.classList.toggle('completed',cb.checked);updateProgress();saveStudy();filter();};
+ const panel=document.createElement('div');panel.className='quiz-panel';const prompt=document.createElement('div');prompt.className='quiz-prompt';const answer=q.querySelector('.answer');answer.id=q.id+'-answer';const h=[...answer.querySelectorAll('h3')].find(x=>x.textContent.trim()==='Question');if(h){let node=h.nextElementSibling;while(node&&!/^H[1-4]$/.test(node.tagName)&&!node.classList.contains('permalink')){prompt.append(node.cloneNode(true));node=node.nextElementSibling;}}if(!prompt.textContent.trim())prompt.textContent=q.querySelector('.question-title').childNodes[0].textContent;
+ const hint=document.createElement('p');hint.className='study-note';hint.textContent='먼저 소리 내어 답변한 뒤, 가이드와 비교하세요.';const reveal=document.createElement('button');reveal.type='button';reveal.className='reveal-answer';reveal.setAttribute('aria-controls',answer.id);reveal.onclick=()=>{const shown=q.classList.toggle('revealed');reveal.textContent=shown?'답변 숨기기':'답변 보기';reveal.setAttribute('aria-expanded',String(shown));};panel.append(prompt,hint,reveal);q.insertBefore(panel,answer);
+});
+document.getElementById('theme-toggle').onclick=()=>{dark=!dark;applyTheme();saveStudy();};document.getElementById('quiz-toggle').onchange=e=>{quizMode=e.target.checked;applyQuiz();saveStudy();};studyFilter.onchange=filter;applyTheme();applyQuiz();updateProgress();
+const searchable = questions.map(question => question.textContent.toLocaleLowerCase().normalize('NFKC'));
+document.getElementById('controls').hidden = false;
+function filter() {
+  const terms = search.value.toLocaleLowerCase().normalize('NFKC').trim().split(/\s+/).filter(Boolean);
+  let count = 0;
+  questions.forEach((question,index) => {
+    const matches = (category.value === 'all' || question.dataset.category === category.value) && (importance.value==='all'||importance.value===question.dataset.importance||(importance.value==='High+'&&ranks[question.dataset.importance]<=1)) && (studyFilter.value==='all'||(studyFilter.value==='done')===completed.has(question.id)) && terms.every(term => searchable[index].includes(term));
+    question.hidden = !matches;
+    if(matches) count++;
+  });
+  if(sort.value==='important'){[...questions].sort((a,b)=>ranks[a.dataset.importance]-ranks[b.dataset.importance]||+a.id.slice(1)-+b.id.slice(1)).forEach(q=>priorityList.append(q));}else{questions.forEach(q=>parts[+q.dataset.category].append(q));}
+  priorityList.hidden=sort.value!=='important'||count===0;
+  document.querySelectorAll('[data-priority]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.priority===importance.value)));
+  parts.forEach(part => part.hidden = ![...part.querySelectorAll('.question')].some(question => !question.hidden));
+  document.getElementById('result-count').textContent = count+' / 50 questions · '+(importance.value==='all'?'전체 중요도':importance.value)+' · '+(sort.value==='important'?'중요도순':'카테고리순');
+  document.getElementById('empty').hidden = count !== 0;
+}
+importance.onchange=filter;sort.onchange=filter;document.querySelectorAll('[data-priority]').forEach(b=>b.onclick=()=>{importance.value=b.dataset.priority;filter();});
+search.addEventListener('input',filter);
+category.addEventListener('change',filter);
+document.getElementById('expand').onclick = () => questions.filter(question=>!question.hidden).forEach(question=>question.open=true);
+document.getElementById('collapse').onclick = () => questions.filter(question=>!question.hidden).forEach(question=>question.open=false);
+document.getElementById('reset').onclick = () => {search.value='';studyFilter.value='all';category.value='all';importance.value='all';sort.value='important';filter();};
+function navigateHash() {
+  const target = document.getElementById(location.hash.slice(1));
+  if(!target) return;
+  if(target.matches('.question,.part')) {
+    search.value='';studyFilter.value='all';category.value='all';importance.value='all';sort.value='important';filter();
+    if(target.matches('.part')){sort.value='category';category.value=target.id.slice(5);filter();}
+    if(target.matches('.question')) target.open=true;
+    requestAnimationFrame(()=>target.scrollIntoView({block:'start'}));
+  }
+}
+window.addEventListener('hashchange',navigateHash);
+document.querySelectorAll('a[href^="#"]').forEach(link=>link.addEventListener('click',()=>{if(link.hash===location.hash) navigateHash();}));
+filter();navigateHash();
+const practice=[
+'연습 포인트: 사용자 문제 → 본인의 설계 결정 → 협업 범위 → 운영 결과를 2분 안에 설명하세요.',
+'연습 포인트: frontier baseline, 학습 데이터, 품질 gate, 97% reliability의 정의와 fallback을 준비하세요.',
+'연습 포인트: 24-wave 실험의 가설·비교 조건·선택 기준과 파라미터 감소가 실제 비용에 준 영향을 설명하세요.',
+'연습 포인트: 재현성·실험 orchestration·팀 도입 방식과 본인이 직접 만든 부분을 구분하세요.',
+'연습 포인트: 여러 팀의 결정에 영향을 준 사례 하나를 골라 roadmap, 갈등 해결, 다른 사람의 성장을 연결하세요.'
+];document.querySelectorAll('#jay-stories .story').forEach((story,i)=>{const p=document.createElement('span');p.className='story-practice';p.style.display='block';p.textContent=practice[i];story.querySelector('p').append(p);});
+let printState;
+window.addEventListener('beforeprint',()=>{
+  if(printState) return;
+  const elements=[...document.querySelectorAll('details'),...parts,priorityList];
+  printState=elements.map(element=>({element,hidden:element.hidden,open:element.open}));
+  elements.forEach(element=>{element.hidden=false;if(element.tagName==='DETAILS')element.open=true;});
+});
+window.addEventListener('afterprint',()=>{if(!printState)return;printState.forEach(({element,hidden,open})=>{element.hidden=hidden;if(element.tagName==='DETAILS')element.open=open;});printState=null;});
+document.getElementById('print').onclick=()=>window.print();
+
+
+
+const preparedSolutions={"q1": "### Python 모범 풀이\n\n```python\nfrom collections import Counter\n\ndef active_customers(events, now, k, window=600):\n    # 기준 시각 now에서 열린 왼쪽 경계 (now-window, now]를 사용합니다.\n    counts = Counter(customer for ts, customer in events\n                     if now - window < ts <= now)\n    # 'more than k'이므로 k와 같은 고객은 제외합니다.\n    return [customer for customer, count in counts.items() if count > k]\n\nassert active_customers([(1, 'a'), (2, 'a')], 2, 1) == ['a']\n```\n\n**복잡도·조건:** 고정된 now에 대한 batch 조회: O(n) 시간, O(u) 공간. 스트리밍에서는 고객별 deque와 전역 만료 관리가 필요합니다.", "q2": "### Python 모범 풀이\n\n```python\nimport heapq\n\ndef top_k(documents, k):\n    if k <= 0:  # 비어 있는 결과가 필요한 경계 조건입니다.\n        return []\n    # 내부적으로 크기 k의 heap을 사용합니다. 동점 순서는 입력 순서를 따릅니다.\n    return heapq.nlargest(k, documents, key=lambda item: item[1])\n\nassert top_k([('a', .2), ('b', .9)], 1) == [('b', .9)]\n```\n\n**복잡도·조건:** O(n log k) 시간, O(k) 보조 공간 (0 < k < n).", "q3": "### Python 모범 풀이\n\n```python\ndef merge_intervals(intervals):\n    merged = []\n    for start, end in sorted(intervals):  # 시작점 순서로 처리합니다.\n        if start > end:\n            raise ValueError('start must be <= end')\n        if not merged or start > merged[-1][1]:\n            merged.append([start, end])  # 겹치지 않으면 새 구간입니다.\n        else:\n            # 끝점이 같은 구간도 합친다는 규칙입니다.\n            merged[-1][1] = max(merged[-1][1], end)\n    return [tuple(interval) for interval in merged]\n\nassert merge_intervals([(1,4), (3,7), (10,12), (11,15)]) == [(1,7), (10,15)]\n```\n\n**복잡도·조건:** O(n log n) 시간, O(n) 공간. 입력은 수정하지 않습니다.", "q4": "### Python 모범 풀이\n\n```python\nfrom collections import OrderedDict\n\nclass LRUCache:\n    def __init__(self, capacity):\n        if capacity < 0:\n            raise ValueError('capacity must be nonnegative')\n        self.capacity = capacity\n        self.data = OrderedDict()  # 왼쪽이 가장 오래 사용하지 않은 항목입니다.\n\n    def get(self, key):\n        if key not in self.data:\n            return -1  # 이 예제의 cache miss 규약입니다.\n        self.data.move_to_end(key)  # 읽은 항목을 가장 최근 위치로 이동합니다.\n        return self.data[key]\n\n    def put(self, key, value):\n        self.data[key] = value\n        self.data.move_to_end(key)  # 기존 키 갱신도 사용으로 간주합니다.\n        if len(self.data) > self.capacity:\n            self.data.popitem(last=False)  # 가장 오래된 항목만 제거합니다.\n\ncache = LRUCache(1)\ncache.put('a', 1)\ncache.put('b', 2)\nassert cache.get('a') == -1 and cache.get('b') == 2\n```\n\n**복잡도·조건:** get/put 평균 O(1), O(capacity) 공간. 자료구조 직접 구현을 요구하면 hashmap + doubly linked list로 구현하세요.", "q5": "### Python 모범 풀이\n\n```python\ndef can_transfer(graph, start, target):\n    stack, seen = [start], {start}\n    while stack:\n        node = stack.pop()  # DFS: 마지막에 발견한 정점부터 탐색합니다.\n        if node == target:\n            return True\n        for neighbor in graph.get(node, []):\n            if neighbor not in seen:\n                seen.add(neighbor)  # 넣을 때 방문 표시하여 중복 탐색을 막습니다.\n                stack.append(neighbor)\n    return False\n\nassert can_transfer({'a': ['b'], 'b': ['a', 'c']}, 'a', 'c')\n```\n\n**복잡도·조건:** O(V+E) 시간, O(V) 공간.", "q6": "### Python 모범 풀이\n\n```python\nfrom collections import defaultdict, deque\n\nclass RateLimiter:\n    def __init__(self, limit=100, window=60):\n        if limit <= 0 or window <= 0:\n            raise ValueError('positive limit and window required')\n        self.limit, self.window = limit, window\n        self.events = defaultdict(deque)\n        self.last = {}\n\n    def allow(self, user_id, timestamp):\n        # 단일 프로세스, 고객별 timestamp가 감소하지 않는다는 조건입니다.\n        if timestamp < self.last.get(user_id, float('-inf')):\n            raise ValueError('timestamps must be nondecreasing')\n        self.last[user_id] = timestamp\n        queue = self.events[user_id]\n        while queue and queue[0] <= timestamp - self.window:\n            queue.popleft()  # (timestamp-window, timestamp] 밖의 기록을 제거합니다.\n        if len(queue) >= self.limit:\n            return False  # 거부한 요청은 횟수에 넣지 않습니다.\n        queue.append(timestamp)\n        return True\n\nlimiter = RateLimiter(limit=1)\nassert limiter.allow('a', 0) and not limiter.allow('a', 1)\nassert limiter.allow('a', 60)\n```\n\n**복잡도·조건:** 요청당 amortized O(1). 메모리는 활성 고객·허용 요청 수에 비례합니다. 실제 서비스에는 유휴 고객 정리, 동시성 제어가 필요합니다.", "q7": "### Python 모범 풀이\n\n```python\nclass Trie:\n    def __init__(self):\n        self.root = {}\n\n    def insert(self, word):\n        node = self.root\n        for char in word:\n            node = node.setdefault(char, {})  # 공통 접두사의 노드를 공유합니다.\n        node[None] = True  # 문자와 충돌하지 않는 단어 종료 표시입니다.\n\n    def autocomplete(self, prefix):\n        node = self.root\n        for char in prefix:\n            if char not in node:\n                return []\n            node = node[char]\n        result, stack = [], [(node, prefix)]\n        while stack:\n            current, word = stack.pop()\n            if None in current:\n                result.append(word)\n            for char, child in current.items():\n                if char is not None:\n                    stack.append((child, word + char))  # 하위 단어를 모두 복원합니다.\n        return result  # 순서는 보장하지 않는 API입니다.\n\ntrie = Trie()\ntrie.insert('cancel')\nassert trie.autocomplete('can') == ['cancel']\n```\n\n**복잡도·조건:** 삽입 O(word 길이). 검색은 prefix 탐색 + 해당 subtree 방문 및 출력 문자열 구성 비용입니다.", "q8": "### Python 모범 풀이\n\n```python\ndef find_duplicates(conversation_ids):\n    seen, duplicates = set(), set()\n    for conversation_id in conversation_ids:\n        if conversation_id in seen:\n            duplicates.add(conversation_id)  # 여러 번 나와도 결과는 한 번만 넣습니다.\n        seen.add(conversation_id)\n    return duplicates  # ID는 hashable하다고 가정합니다.\n\nassert find_duplicates(['a', 'b', 'a', 'a']) == {'a'}\n```\n\n**복잡도·조건:** 평균 O(n) 시간, O(n) 공간.", "q9": "### Python 모범 풀이\n\n```python\nimport heapq\n\nclass RunningMedian:\n    def __init__(self):\n        self.lower, self.upper = [], []\n\n    def add(self, value):\n        # 음수 저장으로 Python min-heap을 max-heap처럼 사용합니다.\n        heapq.heappush(self.lower, -value)\n        heapq.heappush(self.upper, -heapq.heappop(self.lower))\n        if len(self.upper) > len(self.lower):\n            heapq.heappush(self.lower, -heapq.heappop(self.upper))\n        # lower의 크기는 upper와 같거나 정확히 하나 더 큽니다.\n\n    def median(self):\n        if not self.lower:\n            raise ValueError('no values')\n        if len(self.lower) > len(self.upper):\n            return -self.lower[0]\n        return (-self.lower[0] + self.upper[0]) / 2\n\nstream = RunningMedian()\nstream.add(1)\nstream.add(3)\nassert stream.median() == 2\n```\n\n**복잡도·조건:** 추가 O(log n), median O(1), 공간 O(n).", "q10": "### Python 모범 풀이\n\n```python\nfrom collections import deque\n\ndef shortest_path(graph, start, target):\n    queue, parent = deque([start]), {start: None}\n    while queue:\n        node = queue.popleft()  # BFS는 간선 수가 적은 경로부터 방문합니다.\n        if node == target:\n            path = []\n            while node is not None:\n                path.append(node)\n                node = parent[node]  # 부모 포인터로 전체 경로를 복원합니다.\n            return path[::-1]\n        for neighbor in graph.get(node, []):\n            if neighbor not in parent:\n                parent[neighbor] = node  # 최초 발견 경로가 최단 경로입니다.\n                queue.append(neighbor)\n    return []  # 도달할 수 없는 경우입니다. 정점 ID로 None은 쓰지 않습니다.\n\nassert shortest_path({'a': ['b'], 'b': ['c']}, 'a', 'c') == ['a', 'b', 'c']\n```\n\n**복잡도·조건:** O(V+E) 시간, O(V) 공간. 가중치가 없는 그래프에만 적용합니다."};
+function showPreparedSolution(q,target,status){
+ if(preparedSolutions[q.id]){renderCoach(target,preparedSolutions[q.id]);}
+ else{target.replaceChildren(q.querySelector('.answer').cloneNode(true));target.classList.add('markdown-reply');target.querySelector('.answer').style.display='block';target.querySelectorAll('.importance-reason,.permalink').forEach(el=>el.remove());highlightPython(target);}
+ target.hidden=false;status.textContent='저장된 모범 가이드 · 즉시 표시 · 맞춤 피드백은 별도 요청하세요.';
+}
+function highlightPython(root){
+ const keywords=new Set('False None True and as assert async await break class continue def del elif else except finally for from global if import in is lambda nonlocal not or pass raise return try while with yield'.split(' '));
+ const builtins=new Set('print len range list dict set tuple str int float bool sorted max min sum enumerate zip isinstance ValueError deque Counter'.split(' '));
+ root.querySelectorAll('pre code').forEach(block=>{
+  if(block.dataset.highlighted)return;
+  const text=block.textContent;
+  if(!block.classList.contains('language-python')&&!/\b(def |class |import |print\()/.test(text))return;
+  const pattern=/(#[^\n]*|"""[\s\S]*?"""|'''[\s\S]*?'''|"(?:\\.|[^"\\])*"|'(?:\\.|[^'\\])*'|\b\d+(?:\.\d+)?\b|\b[A-Za-z_]\w*\b)/g;
+  let last=0;const nodes=[];for(const match of text.matchAll(pattern)){nodes.push(document.createTextNode(text.slice(last,match.index)));const token=match[0];let cls=token.startsWith('#')?'comment':/^['"]/.test(token)?'string':/^\d/.test(token)?'number':keywords.has(token)?'keyword':builtins.has(token)?'builtin':'';const span=document.createElement('span');span.className=cls?'py-'+cls:'';span.textContent=token;nodes.push(span);last=match.index+token.length;}nodes.push(document.createTextNode(text.slice(last)));block.replaceChildren(...nodes);block.dataset.highlighted='true';
+ });
+}
+
+function renderCoach(target,text){
+ const parsed=new DOMParser().parseFromString(marked.parse(String(text||''),{gfm:true,breaks:true}),'text/html');
+ const allowed=new Set(['P','BR','STRONG','EM','DEL','UL','OL','LI','BLOCKQUOTE','PRE','CODE','H1','H2','H3','H4','H5','H6','HR','TABLE','THEAD','TBODY','TR','TH','TD','A']);
+ function clean(node){if(node.nodeType===Node.TEXT_NODE)return document.createTextNode(node.textContent);if(node.nodeType!==Node.ELEMENT_NODE)return document.createTextNode('');if(!allowed.has(node.tagName))return document.createTextNode(node.textContent);const el=document.createElement(node.tagName.toLowerCase());if(node.tagName==='CODE'&&node.classList.contains('language-python'))el.classList.add('language-python');if(node.tagName==='A'){const href=node.getAttribute('href')||'';if(/^https?:\/\//i.test(href)){el.setAttribute('href',href);el.setAttribute('target','_blank');el.setAttribute('rel','noopener noreferrer');}}node.childNodes.forEach(child=>el.append(clean(child)));return el;}
+ target.replaceChildren(...[...parsed.body.childNodes].map(clean));target.classList.add('markdown-reply');highlightPython(target);
+}
+questions.forEach(q=>{q.querySelectorAll('.answer h3').forEach(h=>{if(h.textContent.trim()==='Question'){h.classList.add('question-label');let n=h.nextElementSibling;while(n&&!/^H[1-4]$/.test(n.tagName)&&!n.classList.contains('permalink')){n.classList.add('question-prompt');n=n.nextElementSibling;}}});});
+
+const starters={1:'def active_customers(events, now, k, window=600):\n    # Define the window boundary and timestamp ordering first.\n    pass\n',2:'def top_k(documents, k):\n    pass\n',3:'def merge_intervals(intervals):\n    pass\n\nprint(merge_intervals([(1,4), (3,7), (10,12), (11,15)]))\n',4:'class LRUCache:\n    def __init__(self, capacity):\n        pass\n\n    def get(self, key):\n        pass\n\n    def put(self, key, value):\n        pass\n',5:'def can_transfer(graph, start, target):\n    pass\n',6:'class RateLimiter:\n    def allow(self, user_id, timestamp):\n        pass\n',7:'class Trie:\n    def insert(self, word):\n        pass\n\n    def autocomplete(self, prefix):\n        pass\n',8:'def find_duplicates(conversation_ids):\n    pass\n',9:'class RunningMedian:\n    def add(self, value):\n        pass\n\n    def median(self):\n        pass\n',10:'def shortest_path(graph, start, target):\n    pass\n'};
+questions.forEach(q=>{
+ const reference=q.querySelector('.answer').textContent;const problem=q.querySelector('.question-title').textContent+'\n'+q.querySelector('.quiz-prompt').textContent;
+ const pad=document.createElement('section');pad.className='code-pad';pad.innerHTML='<h3>Python 실습</h3><p class="study-note">이 Mac의 Python에서 실행 · 10초 제한 · 표준 입력 없이 print/assert로 확인하세요. 코드는 파일·네트워크에 접근할 수 있습니다. AI는 버튼을 누를 때만 로컬 Qwen에 요청합니다.</p><label class="study-note">현재 코드<textarea spellcheck="false" autocomplete="off" aria-label="'+q.id+' Python 코드"></textarea></label><div class="pad-actions"><button type="button" class="run-code">▶ Python 실행</button><button type="button" class="ask-coach">현재 코드 줄별 힌트</button><button type="button" class="ask-grade">인터뷰어 채점 / 10</button><button type="button" class="ask-solution">정답·해설 요청</button></div><p class="pad-status" role="status" aria-live="polite">코드는 이 브라우저에 자동 저장됩니다.</p><div class="pad-output" hidden></div>';
+ const editor=pad.querySelector('textarea'),status=pad.querySelector('.pad-status'),output=pad.querySelector('.pad-output');const key='airbnb-python-'+q.id;
+ const lineInfo=document.createElement('p');lineInfo.className='study-note';editor.after(lineInfo);function showLine(){const line=editor.value.slice(0,editor.selectionStart).split('\n').length;lineInfo.textContent='커서: L'+line+' · 힌트 줄 번호는 빈 줄을 포함한 현재 코드의 1행부터 셉니다.';}['input','click','keyup','select'].forEach(event=>editor.addEventListener(event,showLine));setTimeout(showLine,0);
+ editor.value=starters[q.id.slice(1)]||'# 이 질문과 관련된 작은 실험을 작성하세요.\n# 예: 평가 metric, routing, 데이터 검증 함수\n';try{editor.value=localStorage.getItem(key)??editor.value;}catch(e){}
+ editor.oninput=()=>{try{localStorage.setItem(key,editor.value);status.textContent='코드 저장됨';}catch(e){status.textContent='저장 불가: 현재 페이지에서만 유지됩니다.';}};
+ editor.onkeydown=e=>{if(e.key==='Tab'){e.preventDefault();editor.setRangeText('    ',editor.selectionStart,editor.selectionEnd,'end');editor.dispatchEvent(new Event('input'));}};
+ async function request(kind,mode){if(mode==='grade'&&!editor.value.trim()){status.textContent='채점할 코드를 먼저 작성하세요.';editor.focus();return;}if(mode==='solution'){showPreparedSolution(q,output,status);return;}const token=document.querySelector('meta[name="practice-token"]')?.content;if(!token){status.textContent='Python·Qwen은 로컬 서버에서 사용하세요. Start-Study.command를 실행한 뒤 http://127.0.0.1:8765 를 여세요.';return;}
+ const buttons=[...pad.querySelectorAll('button')];buttons.forEach(b=>b.disabled=true);status.textContent=kind==='run'?'Python 실행 중…':'Qwen이 현재 코드의 줄별 논리와 반례를 분석 중… (추론 모드로 수 분 걸릴 수 있습니다)';output.hidden=true;
+ try{const response=await fetch('/api/'+kind,{method:'POST',headers:{'Content-Type':'application/json','X-Practice-Token':token},body:JSON.stringify({code:editor.value,question:problem,reference,reference_solution:preparedSolutions[q.id]||"",mode})});const data=await response.json();if(!response.ok)throw Error(data.error||'요청 실패');output.hidden=false;if(kind==='run'){output.classList.remove('markdown-reply');output.textContent=data.output||'(출력 없음 — print() 또는 assert를 추가하세요.)';status.textContent=data.timeout?'10초 제한으로 중단됨':'실행 종료 · exit '+data.exit_code+(data.truncated?' · 출력 일부 생략':'');}else{renderCoach(output,data.reply);status.textContent=mode==='grade'?'제출한 코드의 채점 완료 · 수정 후 재채점할 수 있습니다.':'Qwen 응답 · 실행 검증은 Python 실행 버튼으로 확인하세요.';}}catch(e){status.textContent=e.message;}finally{buttons.forEach(b=>b.disabled=false);}}
+ pad.querySelector('.ask-grade').onclick=()=>request('coach','grade');pad.querySelector('.run-code').onclick=()=>request('run');pad.querySelector('.ask-coach').onclick=()=>request('coach','hint');pad.querySelector('.ask-solution').onclick=()=>request('coach','solution');q.append(pad);
+});
+
+questions.filter(q=>+q.id.slice(1)>10).forEach(q=>{
+ const panel=document.createElement('section');panel.className='code-pad theory-pad';panel.innerHTML='<h3>AI/ML · 면접 답변 코치</h3><p class="study-note">코드 없이 질문의 개념을 배우거나, 작성한 답변을 로컬 Qwen에게 검토받으세요. 한국어·영어 모두 가능합니다.</p><label>내 답변 / 설명이 필요한 부분<textarea class="theory-draft" aria-label="'+q.id+' 면접 답변" placeholder="예: SFT와 DPO의 차이는…"></textarea></label><div class="pad-actions"><button type="button" data-mode="explain">개념 설명</button><button type="button" data-mode="feedback">내 답변 피드백</button><button type="button" data-mode="grade">인터뷰어 채점 / 10</button><button type="button" data-mode="solution">모범 답변</button></div><p class="pad-status" role="status" aria-live="polite">답변은 이 브라우저에 자동 저장됩니다.</p><div class="pad-output" hidden></div>';
+ const draft=panel.querySelector('textarea'),status=panel.querySelector('.pad-status'),out=panel.querySelector('.pad-output');const key='airbnb-theory-'+q.id;try{draft.value=localStorage.getItem(key)||'';}catch(e){}
+ draft.oninput=()=>{try{localStorage.setItem(key,draft.value);status.textContent='답변 저장됨';}catch(e){status.textContent='저장 불가: 현재 페이지에서만 유지됩니다.';}};
+ panel.querySelectorAll('button').forEach(button=>button.onclick=async()=>{
+ const mode=button.dataset.mode;if(mode==='solution'){showPreparedSolution(q,out,status);return;}if((mode==='feedback'||mode==='grade')&&!draft.value.trim()){status.textContent='피드백을 받을 답변을 먼저 작성하세요.';draft.focus();return;}
+ const token=document.querySelector('meta[name="practice-token"]')?.content;if(!token){status.textContent='바탕화면 바로가기로 로컬 가이드를 여세요: http://127.0.0.1:8765';return;}
+ const buttons=[...panel.querySelectorAll('button')];buttons.forEach(b=>b.disabled=true);status.textContent='Qwen이 질문과 답변을 검토 중…';out.hidden=true;
+ try{const r=await fetch('/api/coach',{method:'POST',headers:{'Content-Type':'application/json','X-Practice-Token':token},body:JSON.stringify({topic:'theory',mode,category:q.dataset.category,question:q.querySelector('.question-title').textContent,reference:q.querySelector('.answer').textContent,draft:draft.value})});const data=await r.json();if(!r.ok)throw Error(data.error||'요청 실패');renderCoach(out,data.reply);out.hidden=false;status.textContent=mode==='grade'?'제출한 답변의 채점 완료 · 수정 후 재채점할 수 있습니다.':'Qwen 코칭 완료 · 답변의 정확성을 가이드와 비교해 보세요.';}catch(e){status.textContent=e.message;}finally{buttons.forEach(b=>b.disabled=false);}
+ });q.insertBefore(panel,q.querySelector('.code-pad'));
+});
+</script></body></html>
