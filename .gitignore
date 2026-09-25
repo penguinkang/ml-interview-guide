@@ -2,5 +2,5 @@
 work/
 site/
 outputs/*
-!outputs/Airbnb-Senior-Staff-ML-Study-Guide.html
+!outputs/ML-Interview-Study-Guide.html
 __pycache__/
